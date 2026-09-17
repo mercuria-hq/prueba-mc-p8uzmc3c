@@ -369,19 +369,17 @@
 
   <section id="contacto" class="contacto">
     <div class="wrap">
-      <h2 class="titulo centro">Presentar una compañía</h2>
-      <p class="sub">Las compañías se presentan por este formulario. Las consultas institucionales y de prensa ingresan por el mismo canal.</p>
+      <h2 class="titulo centro">Contactanos</h2>
+      <p class="sub">Estamos abiertos a escuchar tu idea, tu startup y oportunidades de negocio en toda la cadena de valor del mercado inmobiliario.</p>
 
       <form id="formulario" novalidate>
-        <div class="campo"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" required><span class="error">Ingresá tu nombre.</span></div>
-        <div class="campo"><label for="apellido">Apellido</label><input id="apellido" name="apellido" type="text" required><span class="error">Ingresá tu apellido.</span></div>
+        <div class="campo"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" type="text" autocomplete="name" required><span class="error">Ingresá tu nombre y apellido.</span></div>
+        <div class="campo"><label for="celular">Celular de contacto</label><input id="celular" name="celular" type="tel" autocomplete="tel" required><span class="error">Ingresá un celular de contacto.</span></div>
         <div class="campo"><label for="mail">Correo electrónico</label><input id="mail" name="mail" type="email" required><span class="error">Revisá el correo electrónico.</span></div>
-        <div class="campo"><label for="empresa">Compañía</label><input id="empresa" name="empresa" type="text" required><span class="error">Ingresá el nombre de la compañía.</span></div>
+        <div class="campo"><label for="empresa">Compañía o proyecto</label><input id="empresa" name="empresa" type="text" required><span class="error">Ingresá el nombre de la compañía o del proyecto.</span></div>
         <div class="campo"><label for="web">Sitio web</label><input id="web" name="web" type="url" placeholder="Opcional"></div>
-        <div class="campo"><label for="cliente">A quién le vende</label>
-          <select id="cliente" name="cliente" required><option value="" selected disabled>Elegir</option><option>Inmobiliarias</option><option>Administradores de consorcios</option><option>Propietarios</option><option>Inquilinos</option><option>Desarrolladores</option><option>Otro</option></select><span class="error">Elegí una opción.</span></div>
         <div class="campo"><label for="etapa">Etapa</label>
-          <select id="etapa" name="etapa" required><option value="" selected disabled>Elegir</option><option>Producto en desarrollo</option><option>Producto en el mercado</option><option>Con primeras ventas</option><option>Con ingresos recurrentes</option></select><span class="error">Elegí una opción.</span></div>
+          <select id="etapa" name="etapa" required><option value="" selected disabled>Elegir</option><option>Producto en desarrollo</option><option>Producto en el mercado</option><option>Con primeras ventas</option><option>Con ingresos recurrentes</option><option>Otra</option></select><span class="error">Elegí una opción.</span></div>
         <div class="campo"><label for="deck">Presentación (enlace)</label><input id="deck" name="deck" type="url" placeholder="Opcional"></div>
         <div class="campo ancho"><label for="que">Qué hace la compañía y en qué momento está</label><textarea id="que" name="que" required></textarea><span class="error">Completá la descripción.</span></div>
         <div class="enviar"><button class="btn lleno" type="submit">Enviar presentación</button><small>Los datos se usan solo para evaluar la presentación.</small></div>

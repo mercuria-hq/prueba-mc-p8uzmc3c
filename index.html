@@ -175,13 +175,13 @@
   .cadena { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
   .cadena li { border: 1px solid rgba(255,255,255,.28); color: var(--blanco); font-size: 14px; padding: 9px 16px; font-weight: 400; }
   /* fundador */
-  .fundador { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: start; }
-  @media (min-width: 900px) { .fundador { grid-template-columns: .85fr 1.15fr; gap: 88px; } }
-  .retrato { position: relative; aspect-ratio: 4 / 5; background: var(--gris-oscuro); overflow: hidden; border-top: 6px solid var(--verde); }
+  .fundador { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; margin-top: 88px; padding-top: 72px; border-top: 1px solid var(--linea); }
+  @media (min-width: 900px) { .fundador { grid-template-columns: 340px 1fr; gap: 80px; } }
+  .retrato { position: relative; aspect-ratio: 4 / 5; max-width: 340px; background: var(--gris-oscuro); overflow: hidden; border-top: 6px solid var(--verde); }
   .retrato img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .retrato .iniciales { position: absolute; inset: 0; display: grid; place-items: center; color: rgba(255,255,255,.18); font-size: clamp(90px, 14vw, 180px); font-weight: 500; letter-spacing: -0.04em; }
   .fundador .rol { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--verde-oscuro); font-weight: 500; margin-bottom: 18px; }
-  .fundador h2 { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05; }
+  .fundador h3 { font-size: clamp(28px, 3vw, 40px); line-height: 1.05; font-weight: 500; }
   .fundador .cargo { margin-top: 10px; font-size: 17px; color: var(--titulo); font-weight: 400; }
   .fundador .parrafos { margin-top: 30px; max-width: 58ch; }
   .fundador .parrafos p { font-size: 17px; line-height: 1.7; }
@@ -244,11 +244,11 @@
   <div class="wrap">
     <a class="marca" href="#inicio" aria-label="Mercuria Capital">mercuria<span class="cap">capital</span><i aria-hidden="true"></i></a>
     <nav class="menu" aria-label="Secciones">
-      <a href="#que-es">El grupo</a>
+      <a href="#que-es">Acerca de</a>
       <a href="#que-hacemos">Qué hacemos</a>
       <a href="#portafolio">Portafolio</a>
       <a href="#buscamos">Criterios</a>
-      <a href="#fundador">Fundador</a>
+      <a href="#proceso">Proceso</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <a class="btn" href="#contacto">Presentar una compañía</a>
@@ -256,11 +256,11 @@
   </div>
 </header>
 <nav class="menu-movil" id="menu-movil" aria-label="Menú">
-  <a href="#que-es">El grupo</a>
+  <a href="#que-es">Acerca de</a>
   <a href="#que-hacemos">Qué hacemos</a>
   <a href="#portafolio">Portafolio</a>
   <a href="#buscamos">Criterios de inversión</a>
-  <a href="#fundador">Fundador</a>
+  <a href="#proceso">Proceso</a>
   <a href="#contacto">Contacto</a>
   <a class="btn" href="#contacto">Presentar una compañía</a>
 </nav>
@@ -290,7 +290,7 @@
   <section id="que-es">
     <div class="wrap dos">
       <div>
-        <h2 class="titulo">Qué es Mercuria Capital</h2>
+        <h2 class="titulo">Acerca de</h2>
         <div class="sub parrafos">
           <p>Mercuria Capital es un grupo de inversión privado con sede en Buenos Aires. Sus intereses se concentran en el alquiler de viviendas y en los servicios que rodean a ese negocio.</p>
           <p>El grupo se formó a partir de compañías que ya operaban en el sector y atienden a la misma clientela de inmobiliarias y administradores. Esa red comercial es el principal activo que el grupo aporta a cada nueva participación.</p>
@@ -311,6 +311,26 @@
           <div><b>Minoritaria</b><span>participación habitual</span></div>
           <div><b>Largo plazo</b><span>horizonte de inversión</span></div>
         </div>
+      </div>
+    </div>
+    <div class="wrap fundador" id="fundador">
+      <figure class="retrato">
+        <img src="assets/fundador.jpg" alt="Iván Ginevra, fundador y presidente de Mercuria Capital" width="540" height="675" loading="lazy">
+      </figure>
+      <div>
+        <span class="rol">Fundador</span>
+        <h3>Iván Ginevra</h3>
+        <p class="cargo">Fundador y presidente de Mercuria Capital</p>
+        <div class="parrafos">
+          <p>Iván Ginevra es desarrollador inmobiliario y dirigente del sector. Es gerente de operaciones de GNV Group, la desarrolladora de Madero Harbour en Puerto Madero, y presidió la Cámara Inmobiliaria Argentina, a la que llegó en 2023 como el dirigente más joven del sector.</p>
+          <p>Es magíster por la Universidad de San Andrés. En 2026 fundó Mercuria y desde entonces preside Mercuria Capital.</p>
+        </div>
+        <ul class="trayectoria">
+          <li><b>Presidente</b><span>Mercuria Capital · 2026</span></li>
+          <li><b>Presidente</b><span>Cámara Inmobiliaria Argentina · 2023</span></li>
+          <li><b>Gerente de operaciones</b><span>GNV Group</span></li>
+        </ul>
+        <span class="firma" aria-hidden="true">Iván Ginevra</span>
       </div>
     </div>
   </section>
@@ -429,29 +449,6 @@
     </div>
   </section>
 
-  <section id="fundador" class="suave">
-    <div class="wrap fundador">
-      <figure class="retrato" aria-label="Retrato de Iván Ginevra">
-        <span class="iniciales" aria-hidden="true">IG</span>
-      </figure>
-      <div>
-        <span class="rol">Fundador</span>
-        <h2>Iván Ginevra</h2>
-        <p class="cargo">Fundador y presidente de Mercuria Capital</p>
-        <div class="parrafos">
-          <p>Iván Ginevra tiene más de treinta años de trayectoria en el mercado inmobiliario argentino. Presidió la Cámara Inmobiliaria Argentina, la entidad que agrupa a las inmobiliarias del país.</p>
-          <p>En 2026 fundó Mercuria, la compañía de garantías y cobranzas de alquiler que dio origen al grupo. Desde entonces preside Mercuria Capital y conduce su política de inversión.</p>
-        </div>
-        <ul class="trayectoria">
-          <li><b>Presidente</b><span>Mercuria Capital</span></li>
-          <li><b>Fundador</b><span>Mercuria · 2026</span></li>
-          <li><b>Ex presidente</b><span>Cámara Inmobiliaria Argentina</span></li>
-        </ul>
-        <span class="firma" aria-hidden="true">Iván Ginevra</span>
-      </div>
-    </div>
-  </section>
-
   <section id="contacto" class="contacto">
     <div class="wrap">
       <h2 class="titulo centro">Contactanos</h2>
@@ -485,7 +482,7 @@
       <p style="margin-top:14px;max-width:34ch">Grupo de inversión privado con participaciones en compañías del sector inmobiliario argentino.</p>
       <p style="margin-top:14px">Buenos Aires, Argentina</p>
     </div>
-    <div><h4>Grupo</h4><ul><li><a href="#que-es">Qué es Mercuria Capital</a></li><li><a href="#que-hacemos">Qué hacemos</a></li><li><a href="#buscamos">Criterios de inversión</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#fundador">Fundador</a></li></ul></div>
+    <div><h4>Grupo</h4><ul><li><a href="#que-es">Acerca de</a></li><li><a href="#que-hacemos">Qué hacemos</a></li><li><a href="#buscamos">Criterios de inversión</a></li><li><a href="#proceso">Proceso</a></li></ul></div>
     <div><h4>Portafolio</h4><ul><li><a href="https://mercuria.ar" target="_blank" rel="noopener">Mercuria Pay</a></li><li><a href="https://www.mob.ar" target="_blank" rel="noopener">MOB</a></li><li><a href="https://ladrillo.info" target="_blank" rel="noopener">Ladrillo.info</a></li><li><a href="https://ladrillo.info/academia" target="_blank" rel="noopener">Academia Ladrillo</a></li></ul></div>
     <div><h4>Contacto</h4><ul><li><a href="#contacto">Presentar una compañía</a></li><li><a href="#contacto">Consultas institucionales</a></li><li><a href="#contacto">Prensa</a></li></ul></div>
     <div class="legal">

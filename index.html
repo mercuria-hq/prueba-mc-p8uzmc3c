@@ -3,690 +3,457 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mercuria Holding</title>
-<meta name="description" content="Mercuria es un holding de inversión en tecnología para el sector inmobiliario argentino. Capital minoritario y paciente, más clientes, infraestructura de cobro y medios.">
-<meta property="og:title" content="Mercuria Holding">
-<meta property="og:description" content="Invertimos en quienes construyen cómo vamos a vivir. Holding de inversión en tecnología inmobiliaria, Argentina.">
+<title>Mercuria</title>
+<meta name="description" content="Mercuria es un grupo de inversión privado enfocado en empresas de tecnología aplicadas al sector inmobiliario argentino.">
+<meta property="og:title" content="Mercuria">
+<meta property="og:description" content="Invertimos en las empresas que están cambiando la forma de alquilar, administrar y construir en Argentina.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ECEBE7'/%3E%3Cpolyline points='16,88 16,22 50,58 84,22 84,88' fill='none' stroke='%231B1A18' stroke-width='13' stroke-linejoin='miter' stroke-linecap='square'/%3E%3Ccircle cx='50' cy='58' r='16' fill='%23ECEBE7'/%3E%3Ccircle cx='50' cy='58' r='10' fill='%23B4321F'/%3E%3C/svg%3E">
-</head>
-<body>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%232fdf84'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    color-scheme: light;
-    --bg: #ECEBE7;        --bg-2: #F7F6F3;
-    --ink: #1B1A18;       --ink-2: #5B5955;
-    --line: #C9C7C0;      --line-strong: #8F8C85;
-    --accent: #B4321F;    --accent-hover: #9A2A19; --on-accent: #FFFFFF;
-    --lamina-bg: #F7F6F3; --lamina-ink: #1B1A18;  --lamina-line: #D6D3CC; --lamina-ink-2: #5B5955;
-    --line-w: 1px;
-    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
-    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
-    --mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
-    --ease: cubic-bezier(.2,.7,.2,1);
+    --negro: #000000;
+    --gris-oscuro: #2d2d2d;
+    --texto: #5b5b5f;
+    --titulo: #111111;
+    --linea: #d4d4d4;
+    --verde: #2fdf84;
+    --verde-oscuro: #22b96b;
+    --blanco: #ffffff;
+    --fondo-suave: #f6f6f6;
+    --sans: "Ubuntu", -apple-system, "Helvetica Neue", Arial, sans-serif;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      color-scheme: dark;
-      --bg: #131312;      --bg-2: #1C1B18;
-      --ink: #ECEAE4;     --ink-2: #9E9B94;
-      --line: #2E2D2A;    --line-strong: #5A5852;
-      --accent: #E4604A;  --accent-hover: #EE7A66; --on-accent: #131312;
-    }
-  }
-  :root[data-theme="dark"] {
-    color-scheme: dark;
-    --bg: #131312;        --bg-2: #1C1B18;
-    --ink: #ECEAE4;       --ink-2: #9E9B94;
-    --line: #2E2D2A;      --line-strong: #5A5852;
-    --accent: #E4604A;    --accent-hover: #EE7A66; --on-accent: #131312;
-  }
-  @media (min-resolution: 2dppx) { :root { --line-w: 0.5px; } }
-
   * { box-sizing: border-box; }
-  html { font-optical-sizing: auto; scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--serif); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; }
-  h1, h2, h3, h4 { font-family: var(--display); margin: 0; text-wrap: balance; }
-  h1 { font-weight: 700; font-size: clamp(40px, 5.2vw, 80px); letter-spacing: -0.03em; line-height: .98; }
-  h2 { font-weight: 600; font-size: clamp(30px, 3.6vw, 48px); letter-spacing: -0.02em; line-height: 1.05; }
-  h3 { font-weight: 600; font-size: clamp(20px, 1.8vw, 23px); letter-spacing: -0.01em; line-height: 1.2; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--sans); font-weight: 300; color: var(--texto); background: var(--blanco); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4 { margin: 0; font-weight: 500; color: var(--titulo); line-height: 1.15; }
   p { margin: 0; }
   a { color: inherit; text-decoration: none; }
-  .lead { font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; max-width: 62ch; color: var(--ink-2); }
-  .mono { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; line-height: 1; color: var(--ink-2); }
-  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  @media (min-width: 768px) { .wrap { padding: 0 40px; } }
-  @media (min-width: 1200px) { .wrap { padding: 0 48px; } }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-  .u { text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px; text-decoration-thickness: 1px; transition: text-decoration-color .16s, text-decoration-thickness .16s; }
-  .u:hover { text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
-  ul { list-style: none; margin: 0; padding: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  img { max-width: 100%; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  @media (min-width: 900px) { .wrap { padding: 0 48px; } }
+  :focus-visible { outline: 2px solid var(--verde); outline-offset: 3px; }
 
-  /* botón: lacre, con mojón que aparece en hover */
-  .btn { position: relative; display: inline-flex; align-items: center; white-space: nowrap; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: -0.005em; padding: 14px 22px; border: 0; border-radius: 3px; background: var(--accent); color: var(--on-accent); cursor: pointer; transition: background .16s var(--ease), transform .1s; }
-  .btn::before { content: ""; width: 0; height: 6px; border-radius: 50%; background: var(--on-accent); margin-right: 0; opacity: 0; transition: width .16s var(--ease), margin .16s var(--ease), opacity .16s; }
-  .btn:hover { background: var(--accent-hover); }
-  .btn:hover::before { width: 6px; margin-right: 10px; opacity: 1; }
-  .btn:active { transform: translateY(1px); }
-  .btn .short { display: none; }
+  /* botones: el de Neutron, pastilla con borde */
+  .btn { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; padding: 13px 30px; border-radius: 30px; border: 1px solid var(--blanco); color: var(--blanco); background: transparent; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+  .btn:hover { background: var(--verde); border-color: var(--verde); color: var(--negro); }
+  .btn.oscuro { border-color: var(--titulo); color: var(--titulo); }
+  .btn.oscuro:hover { background: var(--titulo); color: var(--blanco); border-color: var(--titulo); }
+  .btn.lleno { background: var(--verde); border-color: var(--verde); color: var(--negro); }
+  .btn.lleno:hover { background: var(--verde-oscuro); border-color: var(--verde-oscuro); color: var(--blanco); }
 
-  /* mojón: el marcador de todo el sistema */
-  .mojon { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+  /* barra */
+  .barra { position: absolute; top: 0; left: 0; right: 0; z-index: 10; }
+  .barra .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 24px; }
+  .marca { display: inline-flex; align-items: baseline; gap: 6px; color: var(--blanco); font-weight: 500; font-size: 26px; letter-spacing: -0.01em; }
+  .marca i { width: 9px; height: 9px; border-radius: 50%; background: var(--verde); display: inline-block; transform: translateY(-1px); }
+  .menu { display: none; gap: 34px; font-size: 14px; font-weight: 400; color: rgba(255,255,255,.85); }
+  .menu a:hover { color: var(--verde); }
+  @media (min-width: 980px) { .menu { display: flex; } }
+  .barra .btn { padding: 10px 22px; font-size: 12px; }
+  @media (max-width: 599px) { .barra .btn { display: none; } }
 
-  /* cota: hairline con ticks a 45° y texto mono */
-  .cota { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); line-height: 1; flex-wrap: wrap; }
-  .cota .l { flex: 1; min-width: 24px; height: var(--line-w); background: var(--line); }
-  .cota .t { width: 10px; height: 1px; background: var(--line-strong); transform: rotate(-45deg); flex: none; }
-  .cota b { font-weight: 500; color: var(--ink); }
-
-  /* nav */
-  .nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: var(--line-w) solid var(--line); }
-  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 24px; }
-  .lockup { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); }
-  .lockup svg { width: 28px; height: 28px; display: block; }
-  .lockup .word { font-family: var(--display); font-weight: 700; font-size: 24px; letter-spacing: -0.03em; line-height: 1; }
-  .lockup .desc { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); padding-left: 12px; margin-left: 12px; border-left: 1px solid var(--line); line-height: 1; }
-  .links { display: none; gap: 28px; font-family: var(--display); font-weight: 500; font-size: 15px; }
-  .links a { display: inline-flex; align-items: center; gap: 8px; color: var(--ink-2); transition: color .16s; }
-  .links a::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0; transform: scale(.5); transition: opacity .16s, transform .16s var(--ease); }
-  .links a:hover { color: var(--ink); }
-  .links a:hover::before { opacity: 1; transform: scale(1); }
-  @media (min-width: 1040px) { .links { display: flex; } }
-  .nav .btn { padding: 10px 16px; font-size: 14px; }
-  @media (max-width: 599px) { .lockup .desc { display: none; } .nav .btn { padding: 10px 12px; } .nav .btn .full { display: none; } .nav .btn .short { display: inline; } }
+  /* hero */
+  .hero { position: relative; background: var(--negro); color: var(--blanco); min-height: 88vh; display: flex; align-items: center; overflow: hidden; }
+  .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .hero .wrap { position: relative; padding-top: 120px; padding-bottom: 96px; }
+  .hero h1 { color: var(--blanco); font-weight: 500; font-size: clamp(34px, 5vw, 66px); line-height: 1.08; max-width: 15ch; letter-spacing: -0.01em; }
+  .hero p { margin-top: 26px; font-size: clamp(17px, 1.6vw, 21px); font-weight: 300; color: rgba(255,255,255,.82); max-width: 46ch; line-height: 1.5; }
+  .hero .btn { margin-top: 38px; }
+  .cinta { position: relative; background: var(--negro); border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.7); overflow: hidden; font-size: 14px; font-weight: 400; }
+  .cinta .pista { display: flex; gap: 0; width: max-content; animation: correr 46s linear infinite; }
+  .cinta span { padding: 16px 28px; white-space: nowrap; border-right: 1px solid rgba(255,255,255,.12); }
+  @keyframes correr { to { transform: translateX(-50%); } }
 
   /* secciones */
   section { padding: 96px 0; }
-  @media (min-width: 768px) { section { padding: 120px 0; } }
-  .seclabel { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: var(--line-w) solid var(--line); margin-bottom: 56px; }
-  .seclabel .n { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
-  .seclabel .n b { color: var(--ink); font-weight: 500; }
-  .grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-  @media (min-width: 900px) { .grid { grid-template-columns: 5fr 7fr; gap: 64px; } .sticky { position: sticky; top: 110px; align-self: start; } }
+  @media (min-width: 900px) { section { padding: 120px 0; } }
+  .titulo { font-size: clamp(30px, 3.4vw, 44px); padding-left: 22px; border-left: 6px solid var(--verde); line-height: 1.1; }
+  .titulo.centro { text-align: center; border: 0; padding: 0; }
+  .sub { margin-top: 26px; font-size: clamp(17px, 1.35vw, 19px); line-height: 1.65; color: var(--texto); }
+  .dos { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; }
+  @media (min-width: 900px) { .dos { grid-template-columns: 1.1fr .9fr; gap: 80px; } }
+  .parrafos { display: grid; gap: 20px; max-width: 60ch; }
+  .enfoque { border-top: 1px solid var(--linea); margin-top: 8px; }
+  .enfoque li { padding: 20px 0; border-bottom: 1px solid var(--linea); display: grid; grid-template-columns: 26px 1fr; gap: 14px; font-size: 16px; line-height: 1.55; }
+  .enfoque li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--verde); margin-top: 8px; }
+  .enfoque b { font-weight: 500; color: var(--titulo); }
+  .cifras { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .cifras div { border-top: 2px solid var(--titulo); padding-top: 12px; }
+  .cifras b { display: block; font-weight: 500; font-size: 22px; color: var(--titulo); }
+  .cifras span { font-size: 14px; }
 
-  /* hero */
-  .hero { padding: 72px 0 40px; }
-  @media (min-width: 900px) { .hero { padding: 96px 0 48px; } }
-  .hero .wrap { display: grid; grid-template-columns: 1fr; gap: 48px; }
-  @media (min-width: 900px) { .hero .wrap { grid-template-columns: 8fr 4fr; gap: 64px; align-items: start; } }
-  .hero .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
-  .hero h1 .ln { display: block; }
-  .hero .lead { margin-top: 28px; }
-  .hero .cta { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 36px; font-family: var(--display); font-weight: 500; font-size: 16px; }
-  .plano { border: var(--line-w) solid var(--line); padding: 20px; margin: 0; }
-  .plano svg { width: 100%; height: auto; display: block; }
-  .plano .cap { margin-top: 14px; }
-  /* rótulo */
-  .rotulo { grid-column: 1 / -1; margin-top: 56px; border-top: var(--line-w) solid var(--line); border-bottom: var(--line-w) solid var(--line); display: grid; grid-template-columns: repeat(2, 1fr); }
-  .rotulo div { padding: 12px 14px 12px 0; border-right: var(--line-w) solid var(--line); margin-right: 14px; display: grid; gap: 6px; }
-  .rotulo div:nth-child(2n) { border-right: 0; }
-  @media (min-width: 768px) { .rotulo { grid-template-columns: repeat(5, 1fr); } .rotulo div:nth-child(2n) { border-right: var(--line-w) solid var(--line); } .rotulo div:last-child { border-right: 0; } }
-  .rotulo .k { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
-  .rotulo .v { font-family: var(--mono); font-size: 13px; color: var(--ink); font-variant-numeric: tabular-nums; }
+  /* qué hacemos: lista desplegable de Neutron */
+  .lista { border-top: 1px solid var(--linea); margin-top: 40px; }
+  .lista details { border-bottom: 1px solid var(--linea); }
+  .lista summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 52px 1fr 24px; align-items: center; gap: 18px; padding: 26px 0; font-size: clamp(19px, 1.7vw, 24px); font-weight: 400; color: var(--titulo); }
+  .lista summary::-webkit-details-marker { display: none; }
+  .lista summary .n { font-size: 14px; font-weight: 500; color: var(--verde-oscuro); letter-spacing: .06em; }
+  .lista summary .flecha { width: 12px; height: 12px; border-right: 1.5px solid var(--texto); border-bottom: 1.5px solid var(--texto); transform: rotate(45deg); transition: transform .2s; justify-self: end; margin-top: -6px; }
+  .lista details[open] summary .flecha { transform: rotate(-135deg); margin-top: 6px; }
+  .lista details p { padding: 0 0 28px 70px; max-width: 64ch; font-size: 16px; line-height: 1.65; }
+  @media (max-width: 599px) { .lista summary { grid-template-columns: 40px 1fr 20px; } .lista details p { padding-left: 0; } }
 
-  /* manifiesto */
-  .manifiesto .txt { font-size: clamp(19px, 1.8vw, 24px); line-height: 1.45; max-width: 60ch; display: grid; gap: 22px; }
-  .manifiesto .txt strong { font-family: var(--display); font-weight: 600; font-size: .92em; }
-
-  /* filas */
-  .row { display: grid; grid-template-columns: 44px 1fr; gap: 12px 16px; padding: 22px 0; border-top: var(--line-w) solid var(--line); }
-  .row:last-of-type { border-bottom: var(--line-w) solid var(--line); }
-  .row p { grid-column: 2; color: var(--ink-2); font-size: 16px; }
-  @media (min-width: 720px) { .row { grid-template-columns: 56px 1fr 1.6fr; gap: 24px; } .row p { grid-column: auto; } }
-  .row .n { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .1em; color: var(--ink-2); padding-top: 6px; }
-  .valores { margin-top: 56px; display: grid; gap: 20px; }
-  .valores li { display: grid; grid-template-columns: 20px 1fr; gap: 12px; align-items: start; }
-  .valores li .mojon { margin-top: 9px; }
-  .valores b { font-family: var(--display); font-weight: 600; display: block; margin-bottom: 2px; }
-  .valores span { color: var(--ink-2); font-size: 16px; }
-
-  /* más que capital */
-  .aportes { display: grid; grid-template-columns: 1fr; }
-  @media (min-width: 720px) { .aportes { grid-template-columns: 1fr 1fr; column-gap: 48px; } }
-  .ap { padding: 28px 0; border-top: var(--line-w) solid var(--line); display: grid; gap: 12px; align-content: start; }
-  .ap svg { width: 26px; height: 26px; stroke: var(--ink); fill: none; stroke-width: 1.25; }
-  .ap p { color: var(--ink-2); font-size: 16px; max-width: 46ch; }
-  .frase { margin-top: 64px; font-size: clamp(22px, 2.6vw, 34px); line-height: 1.25; font-family: var(--display); font-weight: 500; letter-spacing: -0.015em; max-width: 26ch; }
-  .frase em { font-style: normal; color: var(--accent); }
-
-  /* lámina del portafolio */
-  .lamina { background: var(--lamina-bg); color: var(--lamina-ink); border: 1px solid var(--lamina-line); border-radius: 2px; display: grid; grid-template-columns: 1fr; }
-  .lamina :focus-visible { outline-color: var(--lamina-ink); }
-  @media (min-width: 720px) { .lamina { grid-template-columns: repeat(3, 1fr); } }
-  .cell { padding: 48px 32px 36px; display: grid; justify-items: center; align-content: start; gap: 22px; border-bottom: 1px solid var(--lamina-line); }
-  @media (min-width: 720px) { .cell { border-bottom: 0; border-right: 1px solid var(--lamina-line); } .cell:last-child { border-right: 0; } }
-  .cell .logo { height: 44px; display: flex; align-items: center; }
-  .cell .logo img { height: 42px; width: auto; display: block; }
-  .cell .meta { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--lamina-ink-2); text-align: center; line-height: 1.6; }
-  .cell .meta a:hover { text-decoration: underline; text-underline-offset: 3px; }
-  .lam-foot { grid-column: 1 / -1; padding: 12px 20px; border-top: 1px solid var(--lamina-line); font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--lamina-ink-2); text-align: right; }
-  /* Ladrillo.info: mismo wordmark que su sitio (Source Serif 4 700, charcoal + .info dorado) */
-  .lg-ladrillo { font-family: var(--serif); font-weight: 700; font-size: 32px; letter-spacing: -0.01em; color: #26231e; line-height: 1; }
+  /* portafolio: tarjetas numeradas */
+  .tarjetas { margin-top: 56px; display: grid; grid-template-columns: 1fr; gap: 22px; }
+  @media (min-width: 760px) { .tarjetas { grid-template-columns: repeat(3, 1fr); } }
+  .tarjeta { border: 1px solid var(--linea); border-radius: 6px; padding: 32px 28px 28px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 18px; background: var(--blanco); transition: box-shadow .25s, transform .25s; }
+  .tarjeta:hover { box-shadow: 0 18px 40px -24px rgba(0,0,0,.35); transform: translateY(-3px); }
+  .tarjeta .num { font-size: 40px; font-weight: 300; color: var(--linea); line-height: 1; }
+  .tarjeta .logo { height: 44px; display: flex; align-items: center; }
+  .tarjeta .logo img { height: 36px; width: auto; }
+  .tarjeta h3 { font-size: 20px; font-weight: 500; }
+  .tarjeta .rubro { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--verde-oscuro); font-weight: 500; margin-bottom: 6px; display: block; }
+  .tarjeta p { font-size: 15.5px; line-height: 1.6; }
+  .tarjeta a.mas { font-size: 14px; font-weight: 500; color: var(--titulo); border-bottom: 1px solid var(--verde); display: inline-block; padding-bottom: 2px; }
+  .tarjeta a.mas:hover { color: var(--verde-oscuro); }
+  .lg-ladrillo { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 28px; color: #26231e; letter-spacing: -0.01em; }
   .lg-ladrillo span { color: #bf842a; }
-  /* Mercuria Pay: escudo-casa + wordmark, como en mercuria.ar */
-  .lg-pay { display: inline-flex; align-items: center; gap: 9px; }
-  .lg-pay svg { width: 32px; height: 32px; }
-  .lg-pay .w { font-family: "Montserrat", var(--display), sans-serif; font-weight: 500; font-size: 23px; letter-spacing: -0.012em; color: #2A2320; line-height: 1; }
+  .lg-pay { display: inline-flex; align-items: center; gap: 8px; }
+  .lg-pay svg { width: 30px; height: 30px; }
+  .lg-pay .w { font-weight: 500; font-size: 21px; color: #2a2320; letter-spacing: -0.01em; }
   .lg-pay .w span { color: #0F7A5A; }
-  .port-desc { margin-top: 48px; display: grid; grid-template-columns: 1fr; }
-  @media (min-width: 720px) { .port-desc { grid-template-columns: repeat(3, 1fr); column-gap: 40px; } }
-  .pd { padding: 24px 0; border-top: var(--line-w) solid var(--line); display: grid; gap: 12px; align-content: start; }
-  .pd .cat { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
-  .pd p { font-size: 16px; }
-  .pd .tags { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--mono); font-size: 12px; color: var(--ink-2); }
-  .pd .tags li::before { content: "·"; margin-right: 8px; color: var(--line-strong); }
-  .pd .tags li:first-child::before { content: none; }
-  .pd .grupo { font-size: 15px; color: var(--ink-2); border-left: 2px solid var(--line-strong); padding-left: 12px; }
-  .pd .grupo b { font-family: var(--display); font-weight: 600; color: var(--ink); font-size: 14px; display: block; margin-bottom: 2px; }
 
-  /* ecosistema */
-  .eco { display: grid; grid-template-columns: 1fr; gap: 48px; }
-  @media (min-width: 900px) { .eco { grid-template-columns: 7fr 5fr; gap: 64px; align-items: start; } }
-  .eco svg { width: 100%; height: auto; display: block; border: var(--line-w) solid var(--line); padding: 16px; }
-  .ciclo li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding: 18px 0; border-top: var(--line-w) solid var(--line); }
-  .ciclo li:last-child { border-bottom: var(--line-w) solid var(--line); }
-  .ciclo .n { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--ink-2); padding-top: 5px; letter-spacing: .1em; }
-  .ciclo b { font-family: var(--display); font-weight: 600; display: block; font-size: 18px; margin-bottom: 2px; }
-  .ciclo span { color: var(--ink-2); font-size: 16px; }
-  .ciclo .tag { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin-left: 10px; }
+  /* qué buscamos + requisitos */
+  .suave { background: var(--fondo-suave); }
+  .requisitos { margin-top: 48px; display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--linea); }
+  @media (min-width: 760px) { .requisitos { grid-template-columns: 1fr 1fr; column-gap: 60px; } }
+  .requisitos li { padding: 26px 0; border-bottom: 1px solid var(--linea); display: grid; grid-template-columns: 40px 1fr; gap: 16px; font-size: 16.5px; line-height: 1.55; }
+  .requisitos li span { font-size: 13px; font-weight: 500; color: var(--verde-oscuro); padding-top: 5px; letter-spacing: .06em; }
+  .requisitos li b { display: block; font-weight: 500; color: var(--titulo); margin-bottom: 4px; font-size: 18px; }
+  .rubros { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .rubros li { border: 1px solid var(--linea); border-radius: 30px; padding: 9px 16px; font-size: 14px; background: var(--blanco); color: var(--titulo); }
 
-  /* aliados */
-  .aliados { border-top: var(--line-w) solid var(--line); padding: 56px 0; }
-  .aliados .wrap { display: grid; gap: 20px; }
-  @media (min-width: 900px) { .aliados .wrap { grid-template-columns: 5fr 7fr; gap: 64px; align-items: center; } }
-  .aliados p { color: var(--ink-2); max-width: 56ch; }
+  /* proceso */
+  .pasos { margin-top: 64px; display: grid; grid-template-columns: 1fr; gap: 36px; position: relative; }
+  @media (min-width: 760px) { .pasos { grid-template-columns: repeat(4, 1fr); gap: 28px; } .pasos::before { content: ""; position: absolute; left: 24px; right: 24px; top: 24px; height: 1px; background: var(--linea); } }
+  .paso { position: relative; text-align: center; padding: 0 10px; }
+  .paso .bola { width: 48px; height: 48px; border-radius: 50%; background: var(--blanco); border: 1px solid var(--titulo); display: inline-grid; place-items: center; font-weight: 500; color: var(--titulo); font-size: 15px; position: relative; }
+  .paso h3 { margin-top: 18px; font-size: 19px; }
+  .paso p { margin-top: 8px; font-size: 15px; line-height: 1.55; }
 
-  /* postulación */
-  .compromiso { margin-top: 40px; display: flex; gap: 16px; align-items: flex-start; max-width: 62ch; }
-  .compromiso .mojon { margin-top: 10px; }
-  .compromiso p { font-size: 18px; }
-  .pasos .btn { margin-top: 32px; }
+  /* ventajas: banda oscura */
+  .oscuro-banda { background: var(--negro); color: rgba(255,255,255,.8); }
+  .oscuro-banda .titulo { color: var(--blanco); }
+  .oscuro-banda .sub { color: rgba(255,255,255,.72); }
+  .ventajas { margin-top: 56px; display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid rgba(255,255,255,.15); }
+  @media (min-width: 760px) { .ventajas { grid-template-columns: 1fr 1fr; column-gap: 60px; } }
+  .ventajas li { padding: 30px 0; border-bottom: 1px solid rgba(255,255,255,.15); display: grid; grid-template-columns: 44px 1fr; gap: 20px; }
+  .ventajas svg { width: 30px; height: 30px; stroke: var(--verde); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
+  .ventajas b { display: block; color: var(--blanco); font-weight: 500; font-size: 19px; margin-bottom: 6px; }
+  .ventajas p { font-size: 15.5px; line-height: 1.6; }
+  .cita { margin-top: 64px; font-size: clamp(20px, 2.2vw, 28px); color: var(--blanco); font-weight: 300; max-width: 30ch; line-height: 1.35; border-left: 4px solid var(--verde); padding-left: 22px; }
 
-  /* formulario */
-  .formband { background: var(--bg-2); border-top: var(--line-w) solid var(--line); border-bottom: var(--line-w) solid var(--line); }
-  .formwrap { max-width: 600px; }
-  form { display: grid; gap: 28px; margin-top: 40px; }
-  .f { display: grid; gap: 8px; }
-  .f label, .f .lab { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
-  .f:focus-within label, .f:focus-within .lab { color: var(--ink); }
-  .f small { font-family: var(--mono); font-size: 11px; color: var(--ink-2); letter-spacing: .02em; }
-  input, select, textarea { width: 100%; font-family: var(--serif); font-size: 17px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--line-strong); border-radius: 0; padding: 10px 0; transition: border-color .16s; }
-  input::placeholder, textarea::placeholder { color: var(--ink-2); opacity: .75; }
-  input:focus, select:focus, textarea:focus { outline: none; border-bottom: 2px solid var(--accent); padding-bottom: 9px; }
-  select { appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--ink-2) 50%), linear-gradient(135deg, var(--ink-2) 50%, transparent 50%); background-position: calc(100% - 14px) 50%, calc(100% - 9px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 28px; }
-  select:invalid { color: var(--ink-2); }
-  select option { background: var(--bg-2); color: var(--ink); }
-  textarea { min-height: 96px; resize: vertical; }
-  .checks { display: grid; grid-template-columns: 1fr; gap: 10px; }
-  @media (min-width: 560px) { .checks { grid-template-columns: 1fr 1fr; } }
-  .chk { display: flex; align-items: flex-start; gap: 12px; font-family: var(--serif); font-size: 16px; cursor: pointer; text-transform: none; letter-spacing: 0; color: var(--ink); }
-  .chk input { width: 16px; height: 16px; margin: 4px 0 0; appearance: none; -webkit-appearance: none; border: 1px solid var(--line-strong); border-radius: 2px; padding: 0; flex: none; transition: border-color .16s, background .16s; }
-  .chk input:checked { background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E") center / 14px no-repeat; border-color: var(--accent); }
-  .chk input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .err { display: none; font-family: var(--mono); font-size: 12px; color: var(--accent); }
-  .f[data-invalid="true"] .err { display: block; }
-  .f[data-invalid="true"] input, .f[data-invalid="true"] textarea, .f[data-invalid="true"] select { border-bottom-color: var(--accent); }
-  .submit { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .submit small { font-family: var(--serif); font-size: 14px; color: var(--ink-2); max-width: 32ch; }
-  .ok { display: none; margin-top: 40px; padding: 28px 0; border-top: var(--line-w) solid var(--line); border-bottom: var(--line-w) solid var(--line); gap: 12px; }
-  .ok.on { display: grid; }
-  .ok h3 { font-size: 30px; display: flex; align-items: center; gap: 12px; }
-  .ok p { color: var(--ink-2); max-width: 56ch; }
+  /* contacto */
+  .contacto .titulo.centro { font-size: clamp(30px, 3.4vw, 44px); }
+  .contacto .sub { text-align: center; max-width: 52ch; margin: 22px auto 0; }
+  form { margin: 56px auto 0; max-width: 820px; display: grid; grid-template-columns: 1fr; column-gap: 48px; row-gap: 8px; }
+  @media (min-width: 700px) { form { grid-template-columns: 1fr 1fr; } .ancho { grid-column: 1 / -1; } }
+  .campo { display: grid; gap: 4px; padding: 14px 0 6px; }
+  .campo label { font-size: 13px; color: var(--texto); font-weight: 400; }
+  .campo input, .campo select, .campo textarea { width: 100%; border: 0; border-bottom: 1px solid #cacaca; background: transparent; font-family: var(--sans); font-weight: 300; font-size: 16px; color: var(--titulo); padding: 8px 0; border-radius: 0; }
+  .campo input:focus, .campo select:focus, .campo textarea:focus { outline: none; border-bottom-color: var(--verde-oscuro); }
+  .campo select { appearance: none; -webkit-appearance: none; background: linear-gradient(45deg, transparent 50%, #888 50%) calc(100% - 12px) 55% / 6px 6px no-repeat, linear-gradient(135deg, #888 50%, transparent 50%) calc(100% - 6px) 55% / 6px 6px no-repeat; padding-right: 24px; }
+  .campo select:invalid { color: #8a8a8a; }
+  .campo textarea { min-height: 96px; resize: vertical; }
+  .campo .error { display: none; font-size: 12.5px; color: #c0392f; }
+  .campo[data-mal="true"] .error { display: block; }
+  .campo[data-mal="true"] input, .campo[data-mal="true"] select, .campo[data-mal="true"] textarea { border-bottom-color: #c0392f; }
+  .enviar { grid-column: 1 / -1; text-align: center; margin-top: 30px; }
+  .enviar .btn { padding: 15px 44px; }
+  .enviar small { display: block; margin-top: 16px; font-size: 13px; color: var(--texto); }
+  .gracias { display: none; margin: 56px auto 0; max-width: 620px; text-align: center; padding: 40px 24px; border: 1px solid var(--linea); border-radius: 6px; }
+  .gracias.ver { display: block; }
+  .gracias h3 { font-size: 26px; }
+  .gracias p { margin-top: 12px; }
 
-  /* faq */
-  .faq details { border-top: var(--line-w) solid var(--line); }
-  .faq details:last-child { border-bottom: var(--line-w) solid var(--line); }
-  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; font-family: var(--display); font-weight: 600; font-size: clamp(18px, 1.6vw, 21px); letter-spacing: -0.01em; }
-  .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; font-family: var(--mono); font-size: 18px; color: var(--ink-2); flex: none; }
-  .faq details[open] summary::after { content: "×"; }
-  .faq details p { padding: 0 0 24px; max-width: 62ch; color: var(--ink-2); animation: fade .15s var(--ease); }
-  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  /* pie */
+  .pie { background: var(--gris-oscuro); color: rgba(255,255,255,.75); padding: 56px 0 36px; font-size: 14px; }
+  .pie .wrap { display: grid; grid-template-columns: 1fr; gap: 32px; }
+  @media (min-width: 900px) { .pie .wrap { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; } }
+  .pie h4 { color: var(--blanco); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .pie li { margin-bottom: 8px; }
+  .pie a:hover { color: var(--verde); }
+  .pie .marca { font-size: 22px; }
+  .pie .legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.12); padding-top: 22px; font-size: 12.5px; line-height: 1.6; color: rgba(255,255,255,.55); display: grid; gap: 8px; }
 
-  /* footer: el rótulo completo */
-  footer { padding: 64px 0 40px; border-top: var(--line-w) solid var(--line); }
-  .ftop { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; }
-  @media (min-width: 900px) { .ftop { grid-template-columns: 5fr 7fr; } }
-  .ftop p { color: var(--ink-2); max-width: 40ch; margin-top: 16px; font-size: 16px; }
-  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; }
-  .cols h4 { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 12px; }
-  .cols ul { display: grid; gap: 8px; font-size: 15px; }
-  .cols a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent); }
-  .rot2 { border-top: var(--line-w) solid var(--line); border-bottom: var(--line-w) solid var(--line); display: grid; grid-template-columns: repeat(2, 1fr); }
-  .rot2 div { padding: 12px 14px 12px 0; margin-right: 14px; border-right: var(--line-w) solid var(--line); display: grid; gap: 6px; }
-  .rot2 div:nth-child(2n) { border-right: 0; }
-  @media (min-width: 768px) { .rot2 { grid-template-columns: repeat(3, 1fr); } .rot2 div:nth-child(2n) { border-right: var(--line-w) solid var(--line); } .rot2 div:nth-child(3n) { border-right: 0; } }
-  .rot2 .k { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
-  .rot2 .v { font-family: var(--mono); font-size: 13px; color: var(--ink); }
-  .legal { margin-top: 28px; display: grid; gap: 14px; font-size: 14px; color: var(--ink-2); max-width: 90ch; }
-  .fbottom { margin-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; color: var(--ink-2); }
-  .theme button { font: inherit; letter-spacing: inherit; text-transform: uppercase; background: none; border: 0; color: var(--ink-2); cursor: pointer; padding: 4px 2px; }
-  .theme button[aria-pressed="true"] { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent); }
-
-  /* motion de carga */
-  .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .45s var(--ease) forwards; }
-  .draw.d2 { animation-delay: .12s; } .draw.d3 { animation-delay: .24s; }
-  @keyframes draw { to { stroke-dashoffset: 0; } }
-  .in { opacity: 0; transform: translateY(10px); animation: rise .5s var(--ease) forwards; }
-  .in.i1 { animation-delay: .15s; } .in.i2 { animation-delay: .22s; } .in.i3 { animation-delay: .29s; } .in.i4 { animation-delay: .40s; } .in.i5 { animation-delay: .46s; } .in.i6 { animation-delay: .80s; }
-  @keyframes rise { to { opacity: 1; transform: none; } }
-  .pop { transform-box: fill-box; transform-origin: center; transform: scale(.6); opacity: 0; animation: pop .25s var(--ease) .65s forwards; }
-  @keyframes pop { to { transform: scale(1); opacity: 1; } }
   @media (prefers-reduced-motion: reduce) {
-    .draw { animation: none; stroke-dashoffset: 0; }
-    .in, .pop { animation: none; opacity: 1; transform: none; }
-    .btn, .btn::before, .links a::before, .u { transition: none; }
     html { scroll-behavior: auto; }
+    .cinta .pista { animation: none; }
+    .tarjeta, .btn, .lista summary .flecha { transition: none; }
   }
 </style>
+</head>
+<body>
 
-<header class="nav">
+<header class="barra">
   <div class="wrap">
-    <a class="lockup" href="#top" aria-label="Mercuria, holding">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <polyline points="16,88 16,22 50,58 84,22 84,88" fill="none" stroke="currentColor" stroke-width="11" stroke-linejoin="miter" stroke-miterlimit="6" stroke-linecap="square"/>
-        <circle cx="50" cy="58" r="15" fill="var(--bg)"/>
-        <circle cx="50" cy="58" r="9" fill="var(--accent)"/>
-      </svg>
-      <span class="word">Mercuria</span>
-      <span class="desc">Holding</span>
-    </a>
-    <nav class="links" aria-label="Secciones">
-      <a href="#capital">Más que capital</a>
+    <a class="marca" href="#inicio" aria-label="Mercuria">mercuria<i aria-hidden="true"></i></a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="#que-es">Qué es Mercuria</a>
+      <a href="#que-hacemos">Qué hacemos</a>
       <a href="#portafolio">Portafolio</a>
-      <a href="#ecosistema">Ecosistema</a>
-      <a href="#tesis">Qué buscamos</a>
-      <a href="#faq">Preguntas</a>
+      <a href="#buscamos">Qué buscamos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
     </nav>
-    <a class="btn" href="#formulario"><span class="full">Postulá tu empresa</span><span class="short">Postulá</span></a>
+    <a class="btn" href="#contacto">Postular mi empresa</a>
   </div>
 </header>
 
-<main id="top">
+<main id="inicio">
   <div class="hero">
+    <canvas id="onda" aria-hidden="true"></canvas>
     <div class="wrap">
-      <div>
-        <div class="eyebrow in i1"><span class="mojon"></span><span class="mono">Holding de inversión · Tecnología inmobiliaria · Argentina</span></div>
-        <h1>
-          <span class="ln in i1">Invertimos en quienes</span>
-          <span class="ln in i2">construyen cómo</span>
-          <span class="ln in i3">vamos a vivir.</span>
-        </h1>
-        <p class="lead in i4">Mercuria invierte en tecnología para el sector inmobiliario argentino y pone sobre la mesa lo que ningún cheque trae: inmobiliarias que compran, infraestructura para cobrar, un medio que te nombra y un grupo que ya pasó por lo mismo. Capital minoritario y paciente.</p>
-        <div class="cta in i5">
-          <a class="btn" href="#formulario">Postulá tu empresa</a>
-          <a class="u" href="#portafolio">Conocé el portafolio</a>
-        </div>
-      </div>
-
-      <figure class="plano in i4" role="group" aria-label="Plano de tesis: audiencia, operación y pagos se cruzan en un punto">
-        <svg viewBox="0 0 360 300" aria-hidden="true" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing=".08em">
-          <g fill="none" stroke="var(--line-strong)" stroke-width="1">
-            <rect class="draw" pathLength="1" x="20" y="20" width="150" height="120"/>
-            <rect class="draw d2" pathLength="1" x="170" y="20" width="170" height="120"/>
-            <rect class="draw d3" pathLength="1" x="95" y="140" width="150" height="120"/>
-          </g>
-          <g fill="var(--ink-2)" style="text-transform:uppercase">
-            <text x="32" y="40">Audiencia</text><text x="32" y="54" font-size="9">Lote 01</text>
-            <text x="182" y="40">Operación</text><text x="182" y="54" font-size="9">Lote 02</text>
-            <text x="107" y="160">Pagos</text><text x="107" y="174" font-size="9">Lote 03</text>
-          </g>
-          <g stroke="var(--line)" stroke-width="1" fill="none">
-            <line x1="20" y1="278" x2="340" y2="278"/>
-            <line x1="16" y1="282" x2="24" y2="274"/><line x1="336" y1="282" x2="344" y2="274"/>
-            <line x1="352" y1="20" x2="352" y2="260"/>
-            <line x1="348" y1="24" x2="356" y2="16"/><line x1="348" y1="264" x2="356" y2="256"/>
-          </g>
-          <text x="180" y="294" text-anchor="middle" fill="var(--ink-2)" font-size="9">Terreno · sector inmobiliario</text>
-          <g class="pop">
-            <circle cx="170" cy="140" r="11" fill="var(--bg)"/>
-            <circle cx="170" cy="140" r="6" fill="var(--accent)"/>
-          </g>
-          <text x="184" y="132" fill="var(--ink)" font-size="9.5">Mercuria</text>
-        </svg>
-        <figcaption class="cap cota"><span class="l"></span><span class="t"></span><span>Donde se cruzan medios, operación y dinero</span><span class="t"></span><span class="l"></span></figcaption>
-      </figure>
-
-      <div class="rotulo in i6" aria-label="Rótulo">
-        <div><span class="k">Lámina</span><span class="v">01 / 01</span></div>
-        <div><span class="k">Proyecto</span><span class="v">Mercuria Holding</span></div>
-        <div><span class="k">Escala</span><span class="v">1 : 1</span></div>
-        <div><span class="k">Ubicación</span><span class="v">Buenos Aires, AR</span></div>
-        <div><span class="k">Revisión</span><span class="v">2026-09</span></div>
-      </div>
+      <h1>Invertimos en las empresas que están cambiando la forma de alquilar, administrar y construir en Argentina.</h1>
+      <p>Mercuria es un grupo de inversión privado enfocado en tecnología aplicada al sector inmobiliario. Acompañamos a cada compañía con capital, con una red que ya funciona y con la estructura que una empresa nueva no puede pagar sola.</p>
+      <a class="btn" href="#contacto">Quiero postular mi empresa</a>
+    </div>
+  </div>
+  <div class="cinta" aria-hidden="true">
+    <div class="pista">
+      <span>Gestión de alquileres</span><span>Cobranzas</span><span>Administración de consorcios</span><span>Medios especializados</span><span>Datos y valuación</span><span>Accesos y portería virtual</span><span>Herramientas para inmobiliarias</span><span>Mantenimiento de edificios</span>
+      <span>Gestión de alquileres</span><span>Cobranzas</span><span>Administración de consorcios</span><span>Medios especializados</span><span>Datos y valuación</span><span>Accesos y portería virtual</span><span>Herramientas para inmobiliarias</span><span>Mantenimiento de edificios</span>
     </div>
   </div>
 
-  <section id="capital">
+  <section id="que-es">
+    <div class="wrap dos">
+      <div>
+        <h2 class="titulo">Qué es Mercuria</h2>
+        <div class="sub parrafos">
+          <p>Mercuria es un grupo de inversión privado con sede en Buenos Aires. Toma participaciones minoritarias en empresas de tecnología que trabajan para el sector inmobiliario: alquileres, administración de edificios, cobranzas, información de mercado y las herramientas que usan todos los días las inmobiliarias y los administradores.</p>
+          <p>El grupo nace de empresas que ya operan en ese sector: una plataforma de cobranzas de alquileres, un medio especializado y una plataforma de alquiler online. La red de inmobiliarias y administradores que se formó alrededor de ellas es hoy el principal activo que Mercuria pone a disposición de las empresas en las que participa.</p>
+          <p>La mirada es de largo plazo. El análisis de cada inversión es disciplinado, el conocimiento del sector es de primera mano y el objetivo es que cada compañía del grupo genere valor para sus clientes, para sus socios y para el sector en su conjunto.</p>
+        </div>
+        <p style="margin-top:36px"><a class="btn oscuro" href="#que-hacemos">Conocenos</a></p>
+      </div>
+      <div>
+        <h3 style="font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--verde-oscuro);font-weight:500;margin-bottom:8px">Enfoque estratégico</h3>
+        <ul class="enfoque">
+          <li><div><b>Identificar</b> empresas que resuelven un problema concreto del sector inmobiliario argentino, con un equipo que conoce ese problema de cerca.</div></li>
+          <li><div><b>Acompañar</b> con capital minoritario y participación activa en lo que más cuesta al principio: conseguir los primeros clientes.</div></li>
+          <li><div><b>Integrar</b> cada compañía con las demás del grupo, de modo que la infraestructura de cobro, la audiencia y la red comercial se compartan.</div></li>
+          <li><div><b>Sostener</b> la inversión en el tiempo, con criterios de gestión y rendición de cuentas propios de una compañía establecida.</div></li>
+        </ul>
+        <div class="cifras">
+          <div><b>3</b><span>compañías en el grupo</span></div>
+          <div><b>Minoritaria</b><span>participación habitual</span></div>
+          <div><b>Argentina</b><span>foco geográfico</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="que-hacemos" class="suave">
     <div class="wrap">
-      <div class="seclabel"><span class="n"><b>01</b> — Más que capital</span></div>
-      <div class="grid" style="margin-bottom:56px">
-        <h2>La plata llega el primer día. Lo que viene después marca la diferencia.</h2>
-        <p class="lead">Cada empresa de Mercuria accede a lo que el grupo ya construyó: clientes, infraestructura de cobro, audiencia y estructura. Lo que a una empresa nueva le lleva años, acá ya está en pie.</p>
+      <h2 class="titulo">Qué hacemos</h2>
+      <p class="sub" style="max-width:60ch">El trabajo de Mercuria empieza con la inversión, pero no termina ahí. Cada compañía del grupo recibe cuatro cosas concretas.</p>
+      <div class="lista">
+        <details open>
+          <summary><span class="n">01</span><span>Invertimos con criterio de socio</span><span class="flecha" aria-hidden="true"></span></summary>
+          <p>Participaciones minoritarias en etapa temprana. Los montos se definen caso por caso, según la etapa de la empresa y lo que el grupo puede aportar además del dinero. No buscamos control ni exclusividades: buscamos empresas que puedan crecer junto con las demás.</p>
+        </details>
+        <details>
+          <summary><span class="n">02</span><span>Abrimos la red comercial</span><span class="flecha" aria-hidden="true"></span></summary>
+          <p>Las inmobiliarias, los administradores de consorcios y los desarrolladores que ya trabajan con las compañías del grupo son los primeros clientes potenciales de cada empresa nueva. Mercuria hace las presentaciones y acompaña las primeras reuniones. Suma además su vínculo con la Cámara Inmobiliaria y su presencia en Expo Real Estate.</p>
+        </details>
+        <details>
+          <summary><span class="n">03</span><span>Prestamos la infraestructura</span><span class="flecha" aria-hidden="true"></span></summary>
+          <p>Mercuria Pay procesa y liquida cobranzas de alquiler y se integra por API. Escribanía, contabilidad y asesoría legal se resuelven con los mismos estudios que atienden al resto del grupo. Es estructura que una empresa de dos o tres personas tarda años en armar.</p>
+        </details>
+        <details>
+          <summary><span class="n">04</span><span>Damos visibilidad en el sector</span><span class="flecha" aria-hidden="true"></span></summary>
+          <p>Ladrillo.info y la Academia Ladrillo llegan a los profesionales inmobiliarios todas las semanas. Las empresas del grupo tienen ahí cobertura, contenido y un lugar donde contar lo que hacen a la audiencia que decide.</p>
+        </details>
       </div>
-      <div class="aportes">
-        <div class="ap"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="3" width="20" height="20"/><path d="M3 23 23 3"/></svg><h3>Distribución real</h3><p>Red de inmobiliarias, vínculo con la Cámara Inmobiliaria y presencia en Expo Real Estate: tus primeros clientes ya están en nuestra agenda.</p></div>
-        <div class="ap"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 9h20M3 17h20"/><path d="M7 5v16M19 5v16"/></svg><h3>Rieles de pago</h3><p>Mercuria Pay se integra por API: cobrás, liquidás y conciliás desde el día uno, sin armar tu propia infraestructura.</p></div>
-        <div class="ap"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5 3h11l5 5v15H5z"/><path d="M16 3v5h5"/><path d="M8 13h10M8 17h10"/></svg><h3>Medios y audiencia</h3><p>Ladrillo.info y la Academia Ladrillo hablan con el sector todos los días: cobertura, contenido y visibilidad donde están tus clientes.</p></div>
-        <div class="ap"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="4" width="20" height="19"/><path d="M10 23v-9h6v9"/><path d="M3 9h20"/></svg><h3>Servicios compartidos</h3><p>Escribanía, contabilidad, asesoría legal y scoring de inquilinos, resueltos por el grupo para que vos te ocupes de construir.</p></div>
-        <div class="ap"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10"/><circle cx="13" cy="13" r="3"/><path d="M13 3v4M13 19v4M3 13h4M19 13h4"/></svg><h3>Capital paciente</h3><p>Participaciones minoritarias, tiempos largos y acompañamiento cercano. Invertimos para construir, no para apurar.</p></div>
-      </div>
-      <p class="frase">Un cheque te da tiempo. <em>Un ecosistema</em> te da clientes.</p>
     </div>
   </section>
 
   <section id="portafolio">
     <div class="wrap">
-      <div class="seclabel"><span class="n"><b>02</b> — Portafolio</span></div>
-      <div class="grid" style="margin-bottom:56px">
-        <h2>Tres empresas que ya se pasan clientes, contratos y cobros.</h2>
-        <p class="lead">Las primeras inversiones del holding ya operan y se conectan entre sí: la audiencia, la operación y el dinero del alquiler, cada una en manos de una empresa distinta.</p>
-      </div>
-      <div class="lamina" aria-label="Lámina 02: empresas del portafolio">
-        <div class="cell">
+      <h2 class="titulo">Portafolio</h2>
+      <p class="sub" style="max-width:60ch">Tres compañías que ya operan y que se complementan: una cobra, una alquila y una informa.</p>
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <span class="num">01</span>
           <div class="logo"><span class="lg-pay" role="img" aria-label="Mercuria Pay">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <path d="M50 6 L86 26 L86 56 C86 74 69 87 50 94 C31 87 14 74 14 56 L14 26 Z" fill="#0F7A5A"/>
-              <path d="M50 28 L76 49 L76 51 L70 51 L70 74 L30 74 L30 51 L24 51 L24 49 Z" fill="#F4EFE7"/>
-              <path d="M44 74 L44 60 Q50 55 56 60 L56 74 Z" fill="#C9A86A"/>
-            </svg><span class="w">Mercuria <span>Pay</span></span></span></div>
-          <div class="meta">Pagos · <a href="https://mercuria.ar" target="_blank" rel="noopener">mercuria.ar</a><br>Infraestructura de cobro del grupo</div>
-        </div>
-        <div class="cell">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L86 26 L86 56 C86 74 69 87 50 94 C31 87 14 74 14 56 L14 26 Z" fill="#0F7A5A"/><path d="M50 28 L76 49 L76 51 L70 51 L70 74 L30 74 L30 51 L24 51 L24 49 Z" fill="#F4EFE7"/><path d="M44 74 L44 60 Q50 55 56 60 L56 74 Z" fill="#C9A86A"/></svg>
+            <span class="w">Mercuria <span>Pay</span></span></span></div>
+          <div>
+            <span class="rubro">Cobranzas de alquiler</span>
+            <p>Débito automático del alquiler, liquidación al propietario y conciliación en un solo circuito. Trabaja con inmobiliarias, administradores y plataformas, y se integra por API. Es la infraestructura de cobro del grupo.</p>
+          </div>
+          <a class="mas" href="https://mercuria.ar" target="_blank" rel="noopener">mercuria.ar</a>
+        </article>
+        <article class="tarjeta">
+          <span class="num">02</span>
           <div class="logo"><img src="mob.png" alt="MOB"></div>
-          <div class="meta">Operación · <a href="https://www.mob.ar" target="_blank" rel="noopener">mob.ar</a><br>Alquiler online</div>
-        </div>
-        <div class="cell">
+          <div>
+            <span class="rubro">Alquiler online</span>
+            <p>Plataforma para alquilar departamentos, casas y PH en CABA y GBA con visitas agendadas, reserva, contrato y garantía en línea. Publican dueños directos e inmobiliarias. Fundada por dos emprendedores de 23 años, superó las 1.000 propiedades publicadas en sus primeros meses.</p>
+          </div>
+          <a class="mas" href="https://www.mob.ar" target="_blank" rel="noopener">mob.ar</a>
+        </article>
+        <article class="tarjeta">
+          <span class="num">03</span>
           <div class="logo"><span class="lg-ladrillo" role="img" aria-label="Ladrillo.info">Ladrillo<span>.info</span></span></div>
-          <div class="meta">Medios · <a href="https://ladrillo.info" target="_blank" rel="noopener">ladrillo.info</a><br>Audiencia y formación</div>
-        </div>
-        <div class="lam-foot">Lámina 02 · Portafolio · 3 empresas</div>
-      </div>
-
-      <div class="port-desc">
-        <div class="pd">
-          <span class="cat">Pagos e infraestructura</span>
-          <h3>Mercuria Pay</h3>
-          <p>Infraestructura de cobranzas para el alquiler. Débito automático del alquiler, liquidación a propietarios y conciliación en un solo flujo, con una API lista para integrar en inmobiliarias, administradores y plataformas. Procesa y liquida para que el alquiler deje de ser un trámite mensual.</p>
-          <ul class="tags"><li>Cobranzas</li><li>Débito automático</li><li>API</li></ul>
-          <div class="grupo"><b>Dentro del grupo</b>Es el canal de cobro de MOB y de cualquier empresa del portafolio que necesite cobrar alquileres o servicios.</div>
-        </div>
-        <div class="pd">
-          <span class="cat">Alquiler online</span>
-          <h3>MOB</h3>
-          <p>Alquilar online en CABA y GBA. Departamentos, casas y PH verificados, visitas agendadas, reserva, contrato y garantía, todo online. Publican dueños directos e inmobiliarias; los inquilinos se verifican con inteligencia artificial. Fundada por dos emprendedores de 23 años y levantada a pulmón, sin inversión externa, superó las 1.000 propiedades publicadas en sus primeros meses.</p>
-          <ul class="tags"><li>Proptech</li><li>Verificación con IA</li><li>CABA y GBA</li></ul>
-          <div class="grupo"><b>Dentro del grupo</b>Sus contratos se cobran por Mercuria Pay y su crecimiento se cuenta en Ladrillo.info, frente a la audiencia que más le importa.</div>
-        </div>
-        <div class="pd">
-          <span class="cat">Medios y formación</span>
-          <h3>Ladrillo.info</h3>
-          <p>Un medio dedicado al real estate argentino. Noticias, datos de mercado por barrio, análisis fiscal y legal en profundidad, herramientas como la calculadora UVA y la tabla de barrios, y un newsletter que llega al sector. Con la Academia Ladrillo forma a los profesionales inmobiliarios.</p>
-          <ul class="tags"><li>Medio digital</li><li>Datos por barrio</li><li>Academia</li></ul>
-          <div class="grupo"><b>Dentro del grupo</b>Es la voz y la audiencia del ecosistema: da visibilidad a MOB, a Mercuria Pay y a cada empresa nueva que se suma.</div>
-        </div>
+          <div>
+            <span class="rubro">Medios y formación</span>
+            <p>Medio digital dedicado al real estate argentino: noticias, datos de mercado por barrio, análisis fiscal y legal, calculadoras y un newsletter que llega al sector. La Academia Ladrillo forma a profesionales inmobiliarios.</p>
+          </div>
+          <a class="mas" href="https://ladrillo.info" target="_blank" rel="noopener">ladrillo.info</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <section id="ecosistema">
+  <section id="buscamos" class="suave">
     <div class="wrap">
-      <div class="seclabel"><span class="n"><b>03</b> — Ecosistema</span></div>
-      <div class="grid" style="margin-bottom:56px">
-        <h2>Una inversión de Mercuria no entra a un portafolio. Entra a un circuito.</h2>
-        <p class="lead">Audiencia, operación y dinero se pasan la posta. En el centro, el holding pone capital e infraestructura para que el ciclo no se corte.</p>
-      </div>
-      <div class="eco">
-        <svg viewBox="0 0 600 360" role="img" aria-label="Ciclo: la audiencia de Ladrillo.info genera demanda para MOB, los contratos de MOB se cobran por Mercuria Pay, y los datos de cobro vuelven a la audiencia" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing=".08em">
-          <defs><marker id="pt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--ink)"/></marker></defs>
-          <g fill="none" stroke="var(--line-strong)" stroke-width="1">
-            <rect x="220" y="24" width="160" height="58"/>
-            <rect x="40" y="250" width="180" height="58"/>
-            <rect x="380" y="250" width="180" height="58"/>
-          </g>
-          <g fill="var(--ink)" style="text-transform:uppercase">
-            <text x="300" y="48" text-anchor="middle">Audiencia</text><text x="300" y="66" text-anchor="middle" fill="var(--ink-2)" font-size="10">Ladrillo.info</text>
-            <text x="130" y="274" text-anchor="middle">Operación</text><text x="130" y="292" text-anchor="middle" fill="var(--ink-2)" font-size="10">MOB</text>
-            <text x="470" y="274" text-anchor="middle">Dinero</text><text x="470" y="292" text-anchor="middle" fill="var(--ink-2)" font-size="10">Mercuria Pay</text>
-          </g>
-          <g fill="none" stroke="var(--ink)" stroke-width="1" marker-end="url(#pt)">
-            <path d="M232 82 L150 244"/>
-            <path d="M220 279 L376 279"/>
-            <path d="M450 244 L368 82"/>
-          </g>
-          <g fill="var(--ink-2)" font-size="10" style="text-transform:uppercase">
-            <text x="176" y="160" text-anchor="end">02 · demanda</text>
-            <text x="300" y="268" text-anchor="middle">03 · contratos</text>
-            <text x="426" y="160" text-anchor="start">04 · datos</text>
-          </g>
-          <g>
-            <circle cx="300" cy="200" r="14" fill="var(--bg)"/>
-            <circle cx="300" cy="200" r="7" fill="var(--accent)"/>
-            <text x="300" y="232" text-anchor="middle" fill="var(--ink)" font-size="10">01 · Mercuria · capital + infraestructura</text>
-          </g>
-        </svg>
-        <ul class="ciclo">
-          <li><span class="n">01</span><div><b>Invertimos.</b><span>Capital minoritario y un equipo que se sienta a tu lado desde la primera semana.</span></div></li>
-          <li><span class="n">02</span><div><b>Te conectamos.<span class="tag">demanda</span></b><span>Tus primeros clientes salen de nuestra red de inmobiliarias, administradores y desarrolladores.</span></div></li>
-          <li><span class="n">03</span><div><b>Cobrás por Mercuria Pay.<span class="tag">contratos</span></b><span>Tu producto se integra a la infraestructura del grupo y cada operación se procesa y liquida sin fricción.</span></div></li>
-          <li><span class="n">04</span><div><b>El sector te conoce.<span class="tag">datos</span></b><span>Ladrillo.info y la Academia cuentan lo que hacés a la audiencia que decide.</span></div></li>
-          <li><span class="n">05</span><div><b>Vos potenciás al resto.</b><span>Lo que construís se vuelve un servicio más para las otras empresas del grupo. Y el ciclo empieza de nuevo.</span></div></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="tesis">
-    <div class="wrap">
-      <div class="seclabel"><span class="n"><b>04</b> — Tesis</span></div>
-      <div class="grid">
-        <div class="sticky">
-          <h2>Qué buscamos.</h2>
-          <p class="lead" style="margin-top:20px">Invertimos en empresas que le venden a inmobiliarias, administradores de consorcio, propietarios, inquilinos o desarrolladores. Si tu producto hace que alguna de esas personas viva o trabaje mejor, queremos conocerte.</p>
-          <ul class="valores">
-            <li><span class="mojon"></span><div><b>Obsesión por el problema.</b><span>Conocés al cliente mejor que él mismo, porque lo viviste o lo escuchaste mil veces.</span></div></li>
-            <li><span class="mojon"></span><div><b>Capacidad de ejecutar con poco.</b><span>Lanzaste antes de tener todo. Aprendés más rápido de lo que gastás.</span></div></li>
-            <li><span class="mojon"></span><div><b>Ganas de jugar en equipo.</b><span>Entendés que un ecosistema vale más que una empresa aislada y estás dispuesto a integrarte.</span></div></li>
+      <div class="dos">
+        <div>
+          <h2 class="titulo">Qué empresas buscamos</h2>
+          <p class="sub">Empresas de tecnología que le vendan a inmobiliarias, administradores de consorcios, propietarios, inquilinos o desarrolladores, y que ya hayan probado su producto con clientes reales, aunque sean pocos.</p>
+          <p class="sub" style="margin-top:16px">No hace falta que estén en Buenos Aires. Sí hace falta que el problema que resuelven exista en el sector inmobiliario argentino y que el equipo lo conozca de cerca.</p>
+          <ul class="rubros" aria-label="Rubros de interés">
+            <li>Gestión de alquileres</li><li>Administración de consorcios</li><li>Cobranzas y pagos</li><li>Datos y valuación</li><li>Accesos y portería virtual</li><li>Mantenimiento de edificios</li><li>Herramientas para inmobiliarias</li>
           </ul>
         </div>
         <div>
-          <div class="rows">
-            <div class="row"><span class="n">01</span><h3>Gestión de alquileres</h3><p>Software para que inmobiliarias y administradores manejen contratos, cobros y relaciones sin planillas ni cadenas de WhatsApp.</p></div>
-            <div class="row"><span class="n">02</span><h3>Mantenimiento en altura</h3><p>Drones, sensores e inspección inteligente para edificios que hoy dependen de andamios y visitas presenciales.</p></div>
-            <div class="row"><span class="n">03</span><h3>Portería virtual y accesos</h3><p>Control de ingresos, visitas y encomiendas para consorcios que quieren seguridad sin sumar costos fijos.</p></div>
-            <div class="row"><span class="n">04</span><h3>Datos y valuación</h3><p>Modelos, tasaciones y señales de mercado que le den evidencia a la experiencia del profesional.</p></div>
-            <div class="row"><span class="n">05</span><h3>Herramientas para inmobiliarias</h3><p>Todo lo que le ahorre horas a una inmobiliaria: captación, publicación, firma, seguimiento, posventa.</p></div>
-          </div>
-          <div class="cota" style="margin-top:32px"><span class="l"></span><span class="t"></span><span>Etapa · <b>pre-seed y seed</b></span><span class="t"></span><span>Participación · <b>minoritaria</b></span><span class="t"></span><span>Geografía · <b>Argentina</b></span><span class="t"></span><span class="l"></span></div>
+          <h3 style="font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--verde-oscuro);font-weight:500">Requisitos</h3>
+          <ul class="requisitos" style="grid-template-columns:1fr">
+            <li><span>01</span><div><b>Un problema real del sector</b>Una propuesta de valor clara, que resuelva algo que hoy le cuesta tiempo o plata a una inmobiliaria, a un administrador o a un inquilino.</div></li>
+            <li><span>02</span><div><b>Producto en la calle</b>Un MVP en uso, validaciones técnicas hechas y primeras ventas, aunque estén en proceso.</div></li>
+            <li><span>03</span><div><b>Equipo con dedicación completa</b>Fundadores que viven del proyecto y lo conocen mejor que nadie.</div></li>
+            <li><span>04</span><div><b>Ganas de trabajar en grupo</b>Disposición a integrarse con las demás compañías de Mercuria y a compartir clientes, datos e infraestructura cuando tenga sentido.</div></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="manifiesto" id="manifiesto">
-    <div class="wrap grid">
-      <div class="sticky">
-        <div class="seclabel" style="margin-bottom:24px"><span class="n"><b>05</b> — Manifiesto</span></div>
-        <h2>Capital que construye.</h2>
-      </div>
-      <div class="txt">
-        <p>Todos vivimos en algún lado. Alquilamos, compramos, administramos, cobramos, esperamos que el ascensor funcione. Y sin embargo, la industria que sostiene ese pedazo enorme de la vida sigue moviéndose con más esfuerzo que herramientas: papel, WhatsApp y horas que nadie devuelve.</p>
-        <p>Mercuria existe para cambiar eso. No desde afuera, sino desde adentro: con las inmobiliarias, con los administradores, con los propietarios y con los inquilinos.</p>
-        <p>Creemos que la próxima generación de empresas inmobiliarias argentinas va a ser tecnológica. Y creemos que esas empresas no necesitan solo plata. Necesitan clientes, infraestructura para cobrar, una audiencia que las conozca y un equipo que ya haya pasado por lo mismo.</p>
-        <p>Por eso somos un fondo que además es un ecosistema. Cada empresa en la que invertimos gana acceso a las demás. Cada una hace más fuerte a las otras.</p>
-        <p><strong>Invertimos en gente que construye. Y construimos con ellos.</strong></p>
+  <section id="proceso">
+    <div class="wrap">
+      <h2 class="titulo centro">Nuestro proceso</h2>
+      <p class="sub" style="text-align:center;max-width:56ch;margin-left:auto;margin-right:auto">Cuatro instancias, sin vueltas. Respondemos todas las postulaciones, también las que no avanzan.</p>
+      <div class="pasos">
+        <div class="paso"><span class="bola">1</span><h3>Postulación</h3><p>Completás el formulario de esta página. Con una descripción clara alcanza; el deck es opcional.</p></div>
+        <div class="paso"><span class="bola">2</span><h3>Primera reunión</h3><p>Una charla con el equipo de Mercuria para entender el producto, el cliente y el momento de la empresa.</p></div>
+        <div class="paso"><span class="bola">3</span><h3>Análisis</h3><p>Revisión de producto, mercado, números y equipo, y de cómo encaja la empresa con el resto del grupo.</p></div>
+        <div class="paso"><span class="bola">4</span><h3>Decisión</h3><p>Una respuesta concreta, con sus razones. Si es que sí, se define la participación y empieza el trabajo conjunto.</p></div>
       </div>
     </div>
   </section>
 
-  <div class="aliados" id="aliados">
+  <section id="ventajas" class="oscuro-banda">
     <div class="wrap">
-      <h3>¿Sos inmobiliaria, administrador o querés aliarte al grupo?</h3>
-      <p>La red de Mercuria es también tu red: acceso temprano a las herramientas de las empresas del grupo y a Mercuria Pay. Contanos quién sos desde el <a class="u" href="#formulario">formulario</a>, eligiendo la opción "Inmobiliaria, administrador o aliado".</p>
-    </div>
-  </div>
-
-  <section id="postular" style="padding-bottom:64px">
-    <div class="wrap">
-      <div class="seclabel"><span class="n"><b>06</b> — Postulación</span></div>
-      <div class="grid">
-        <div class="sticky">
-          <h2>Cómo postularse.</h2>
-          <div class="compromiso"><span class="mojon"></span><p>Respondemos a todas las postulaciones, incluso las que no avanzan. Si te decimos que no, te decimos por qué.</p></div>
-        </div>
-        <div class="rows pasos">
-          <div class="row"><span class="n">01</span><h3>Postulación</h3><p>Completás el formulario en diez minutos. No hace falta deck perfecto: hace falta claridad.</p></div>
-          <div class="row"><span class="n">02</span><h3>Primera charla</h3><p>Nos juntamos a conocerte: qué construís, para quién y por qué ahora.</p></div>
-          <div class="row"><span class="n">03</span><h3>Análisis</h3><p>Miramos producto, mercado y equipo, y evaluamos cómo encajás con el ecosistema.</p></div>
-          <div class="row"><span class="n">04</span><h3>Decisión</h3><p>Te decimos que sí, que no, o que todavía no. Siempre con una razón.</p></div>
-          <a class="btn" href="#formulario">Ir al formulario</a>
-        </div>
-      </div>
+      <h2 class="titulo">Por qué Mercuria</h2>
+      <p class="sub" style="max-width:60ch">Hay capital disponible en el mercado. Lo que escasea es capital que venga con clientes, con infraestructura y con alguien que ya pasó por lo mismo.</p>
+      <ul class="ventajas">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg><div><b>Red comercial en marcha</b><p>Inmobiliarias, administradores y desarrolladores que ya son clientes de las compañías del grupo. Las primeras reuniones se consiguen por presentación, no por prospección en frío.</p></div></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg><div><b>Infraestructura de cobro</b><p>Mercuria Pay, disponible por API para cualquier empresa del grupo que necesite cobrar alquileres, expensas o servicios.</p></div></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg><div><b>Un medio que habla con el sector</b><p>Ladrillo.info y la Academia Ladrillo: cobertura, contenido y formación frente a la audiencia que decide compras en el sector.</p></div></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z"/></svg><div><b>Servicios compartidos</b><p>Escribanía, contabilidad, asesoría legal y evaluación de inquilinos resueltos por el grupo, para que el equipo se dedique al producto.</p></div></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><div><b>Capital con paciencia</b><p>Participaciones minoritarias y horizonte largo. Sin plazos artificiales de salida ni presión por resultados trimestrales.</p></div></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 20c0-2.6 1.6-4.5 4-4.5"/></svg><div><b>Gente que conoce el negocio desde adentro</b><p>Las compañías del grupo tratan todos los días con inmobiliarias, propietarios e inquilinos. Saben dónde están las trabas y cuánto tarda cada cosa.</p></div></li>
+      </ul>
+      <p class="cita">Un socio que aporta lo que el dinero solo no compra: clientes, tiempo y sector.</p>
     </div>
   </section>
 
-  <div class="formband">
-    <section id="formulario" style="padding-top:80px">
-      <div class="wrap">
-        <div class="formwrap">
-          <span class="mono">Formulario de postulación</span>
-          <h2 style="margin-top:16px">Contanos qué estás construyendo.</h2>
-          <p class="lead" style="margin-top:14px">Diez minutos y lo leemos completo.</p>
-
-          <form id="form" novalidate>
-            <div class="f"><label for="quien">¿Quién sos?</label>
-              <select id="quien" name="quien" required aria-describedby="err-quien"><option value="" selected disabled>Elegí una opción</option><option>Fundador o fundadora de una startup</option><option>Inmobiliaria, administrador o aliado</option><option>Prensa</option></select><span class="err" id="err-quien">Decinos desde dónde nos escribís.</span></div>
-            <div class="f"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required aria-describedby="err-nombre"><span class="err" id="err-nombre">Necesitamos tu nombre para responderte.</span></div>
-            <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Para responderte" required aria-describedby="err-email"><span class="err" id="err-email">Revisá el email: así no te podemos escribir.</span></div>
-            <div class="f"><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" placeholder="Nombre del proyecto o empresa" required aria-describedby="err-empresa"><span class="err" id="err-empresa">Contanos cómo se llama lo que construís.</span></div>
-            <div class="f"><label for="web">Sitio web</label><input id="web" name="web" type="url" placeholder="https://" aria-describedby="h-web"><small id="h-web">Opcional si todavía no lo tenés.</small></div>
-            <div class="f"><label for="cliente">¿A quién le vendés?</label>
-              <select id="cliente" name="cliente" required aria-describedby="err-cliente"><option value="" selected disabled>Elegí una opción</option><option>Inmobiliarias</option><option>Administradores de consorcio</option><option>Propietarios</option><option>Inquilinos</option><option>Desarrolladores</option><option>Otro</option></select><span class="err" id="err-cliente">Elegí a quién le vendés.</span></div>
-            <div class="f"><label for="etapa">Etapa</label>
-              <select id="etapa" name="etapa" required aria-describedby="err-etapa"><option value="" selected disabled>Elegí una opción</option><option>Idea validada</option><option>Producto en el mercado</option><option>Con ingresos recurrentes</option><option>Levantando pre-seed</option><option>Levantando seed</option></select><span class="err" id="err-etapa">Elegí la etapa en la que estás.</span></div>
-            <div class="f"><label for="que">¿Qué construís?</label><textarea id="que" name="que" placeholder="El problema, la solución y por qué ahora. Tres párrafos alcanzan." required aria-describedby="err-que"></textarea><span class="err" id="err-que">Este es el campo que más leemos. No lo dejes vacío.</span></div>
-            <div class="f"><label for="traccion">Facturación o tracción</label><input id="traccion" name="traccion" type="text" placeholder="Clientes, usuarios, ingresos o lo que mejor cuente tu avance" aria-describedby="h-traccion"><small id="h-traccion">Opcional.</small></div>
-            <div class="f"><span class="lab" id="lab-nec">¿Qué necesitás además de capital?</span>
-              <div class="checks" role="group" aria-labelledby="lab-nec">
-                <label class="chk"><input type="checkbox" name="nec" value="distribucion">Distribución (clientes y red)</label>
-                <label class="chk"><input type="checkbox" name="nec" value="pagos">Pagos (Mercuria Pay)</label>
-                <label class="chk"><input type="checkbox" name="nec" value="medios">Medios (Ladrillo.info y Academia)</label>
-                <label class="chk"><input type="checkbox" name="nec" value="servicios">Servicios compartidos (legal, contable, escribanía, scoring)</label>
-                <label class="chk"><input type="checkbox" name="nec" value="capital">Solo capital</label>
-              </div></div>
-            <div class="f"><label for="deck">Link al deck</label><input id="deck" name="deck" type="url" placeholder="Drive, Notion, PDF, lo que tengas" aria-describedby="h-deck"><small id="h-deck">Opcional.</small></div>
-            <div class="submit"><button class="btn" type="submit">Enviar postulación</button><small>Al enviar, tus datos se usan solo para evaluar tu postulación. Nada de spam.</small></div>
-          </form>
-
-          <div class="ok" id="ok" role="status" aria-live="polite">
-            <h3><span class="mojon"></span>Llegó.</h3>
-            <p>Gracias por contarnos qué estás construyendo. Leemos cada postulación y te vamos a responder, avance o no. Mientras tanto, mirá cómo trabajan las empresas del grupo en <a class="u" href="https://ladrillo.info" target="_blank" rel="noopener">Ladrillo.info</a>.</p>
-            <span class="mono">Recibido · postulación registrada</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <section id="faq" class="faq">
+  <section id="contacto" class="contacto">
     <div class="wrap">
-      <div class="seclabel"><span class="n"><b>07</b> — Preguntas</span></div>
-      <div class="grid">
-        <h2 class="sticky">Lo que nos preguntan antes de postularse.</h2>
-        <div>
-          <details><summary>¿En qué etapa invierten y de cuánto son los tickets?</summary><p>Invertimos en pre-seed y seed con participaciones minoritarias. No publicamos montos: cada inversión se define según la etapa, el equipo y lo que el ecosistema puede aportar.</p></details>
-          <details><summary>¿Qué participación toman y qué piden a cambio?</summary><p>Participación minoritaria. No pedimos exclusividad con Mercuria Pay ni con Ladrillo.info; pedimos que juegues en equipo con el resto del grupo.</p></details>
-          <details><summary>¿Qué pasa si mi empresa no encaja con la tesis?</summary><p>Te lo decimos rápido y con una razón concreta. Si vemos que le puede servir a alguien de nuestra red, hacemos la presentación aunque no invirtamos.</p></details>
-          <details><summary>¿Invierten fuera del sector inmobiliario?</summary><p>No. Nuestra ventaja está en el sector: la red, la infraestructura de cobro y los medios sirven para empresas inmobiliarias. Ahí es donde sumamos más que plata.</p></details>
-          <details><summary>¿Tengo que usar Mercuria Pay si Mercuria invierte?</summary><p>No es condición. Es infraestructura disponible por API para integrar cuando te convenga. MOB la usa para cobrar sus contratos porque le ahorró construir cobranzas desde cero; si a tu producto le sirve, está lista.</p></details>
-          <details><summary>¿Cuánto tardan en responder?</summary><p>Respondemos todas las postulaciones. Los tiempos varían según la etapa y la conversación, pero nunca vas a quedar sin respuesta ni sin una razón.</p></details>
-          <details><summary>¿Invierten en empresas de otras provincias?</summary><p>Sí. Nos interesa cualquier empresa argentina que le venda al sector inmobiliario. Que estés en Córdoba, Rosario o Mendoza no cambia la tesis; cambia el mapa de clientes.</p></details>
-        </div>
+      <h2 class="titulo centro">Contanos tu empresa</h2>
+      <p class="sub">Si tenés una empresa de tecnología para el sector inmobiliario y creés que puede crecer dentro del grupo, este es el lugar para empezar. Leemos todo lo que llega.</p>
+
+      <form id="formulario" novalidate>
+        <div class="campo"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" required><span class="error">Necesitamos tu nombre.</span></div>
+        <div class="campo"><label for="apellido">Apellido</label><input id="apellido" name="apellido" type="text" required><span class="error">Necesitamos tu apellido.</span></div>
+        <div class="campo"><label for="mail">Mail</label><input id="mail" name="mail" type="email" required><span class="error">Revisá el mail, así no te podemos responder.</span></div>
+        <div class="campo"><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" required><span class="error">Contanos cómo se llama la empresa.</span></div>
+        <div class="campo"><label for="web">Página web</label><input id="web" name="web" type="url" placeholder="Opcional"></div>
+        <div class="campo"><label for="cliente">A quién le venden</label>
+          <select id="cliente" name="cliente" required><option value="" selected disabled>Elegir</option><option>Inmobiliarias</option><option>Administradores de consorcios</option><option>Propietarios</option><option>Inquilinos</option><option>Desarrolladores</option><option>Otro</option></select><span class="error">Elegí una opción.</span></div>
+        <div class="campo"><label for="etapa">Etapa</label>
+          <select id="etapa" name="etapa" required><option value="" selected disabled>Elegir</option><option>Idea validada</option><option>Producto en el mercado</option><option>Con ingresos recurrentes</option><option>Levantando pre-seed</option><option>Levantando seed</option></select><span class="error">Elegí una opción.</span></div>
+        <div class="campo"><label for="deck">Link al deck</label><input id="deck" name="deck" type="url" placeholder="Opcional"></div>
+        <div class="campo ancho"><label for="que">Qué hacen, para quién y en qué momento están</label><textarea id="que" name="que" required></textarea><span class="error">Este es el campo que más leemos.</span></div>
+        <div class="enviar"><button class="btn lleno" type="submit">Enviar</button><small>Tus datos se usan únicamente para evaluar la postulación.</small></div>
+      </form>
+
+      <div class="gracias" id="gracias" role="status" aria-live="polite">
+        <h3>Recibimos tu postulación.</h3>
+        <p>Gracias por escribirnos. La leemos con atención y te respondemos, avance o no.</p>
       </div>
     </div>
   </section>
 </main>
 
-<footer>
+<footer class="pie">
   <div class="wrap">
-    <div class="ftop">
-      <div>
-        <a class="lockup" href="#top" aria-label="Mercuria, holding">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <polyline points="16,88 16,22 50,58 84,22 84,88" fill="none" stroke="currentColor" stroke-width="11" stroke-linejoin="miter" stroke-miterlimit="6" stroke-linecap="square"/>
-            <circle cx="50" cy="58" r="15" fill="var(--bg)"/>
-            <circle cx="50" cy="58" r="9" fill="var(--accent)"/>
-          </svg>
-          <span class="word">Mercuria</span>
-          <span class="desc">Holding</span>
-        </a>
-        <p>Mercuria es un holding de inversión en tecnología para el sector inmobiliario argentino.</p>
-      </div>
-      <div class="cols">
-        <div><h4>Portafolio</h4><ul><li><a href="https://mercuria.ar" target="_blank" rel="noopener">Mercuria Pay</a></li><li><a href="https://www.mob.ar" target="_blank" rel="noopener">MOB</a></li><li><a href="https://ladrillo.info" target="_blank" rel="noopener">Ladrillo.info</a></li><li><a href="https://ladrillo.info/academia" target="_blank" rel="noopener">Academia Ladrillo</a></li></ul></div>
-        <div><h4>Holding</h4><ul><li><a href="#capital">Más que capital</a></li><li><a href="#ecosistema">El ecosistema</a></li><li><a href="#tesis">Qué buscamos</a></li><li><a href="#postular">Cómo postularse</a></li><li><a href="#faq">Preguntas frecuentes</a></li></ul></div>
-        <div><h4>Contacto</h4><ul><li><a href="#formulario">Postulaciones</a></li><li><a href="#aliados">Inmobiliarias y aliados</a></li><li><a href="#formulario">Prensa</a></li></ul></div>
-      </div>
+    <div>
+      <a class="marca" href="#inicio" aria-label="Mercuria">mercuria<i aria-hidden="true"></i></a>
+      <p style="margin-top:14px;max-width:34ch">Grupo de inversión privado enfocado en tecnología para el sector inmobiliario argentino.</p>
+      <p style="margin-top:14px">Buenos Aires, Argentina</p>
     </div>
-    <div class="rot2" aria-label="Rótulo">
-      <div><span class="k">Proyecto</span><span class="v">Mercuria Holding</span></div>
-      <div><span class="k">Domicilio</span><span class="v">Buenos Aires, Argentina</span></div>
-      <div><span class="k">Contacto</span><span class="v"><a class="u" href="#formulario">Formulario</a></span></div>
-      <div><span class="k">Revisión</span><span class="v">2026-09</span></div>
-      <div><span class="k">Lámina</span><span class="v">1 / 1</span></div>
-      <div><span class="k">Escala</span><span class="v">1 : 1</span></div>
-    </div>
+    <div><h4>Grupo</h4><ul><li><a href="#que-es">Qué es Mercuria</a></li><li><a href="#que-hacemos">Qué hacemos</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#ventajas">Por qué Mercuria</a></li></ul></div>
+    <div><h4>Portafolio</h4><ul><li><a href="https://mercuria.ar" target="_blank" rel="noopener">Mercuria Pay</a></li><li><a href="https://www.mob.ar" target="_blank" rel="noopener">MOB</a></li><li><a href="https://ladrillo.info" target="_blank" rel="noopener">Ladrillo.info</a></li><li><a href="https://ladrillo.info/academia" target="_blank" rel="noopener">Academia Ladrillo</a></li></ul></div>
+    <div><h4>Contacto</h4><ul><li><a href="#contacto">Postulaciones</a></li><li><a href="#contacto">Inmobiliarias y aliados</a></li><li><a href="#contacto">Prensa</a></li></ul></div>
     <div class="legal">
-      <p>Mercuria es un holding de inversión. No realiza oferta pública de valores ni capta ahorro del público. Cada empresa del portafolio opera con su propia razón social, sus propios contratos y bajo su propia responsabilidad. La información de este sitio es de carácter institucional y no constituye asesoramiento financiero ni una invitación a invertir.</p>
-      <p>Mercuria Pay procesa y liquida cobranzas de alquiler para inmobiliarias, administradores y plataformas.</p>
-    </div>
-    <div class="fbottom">
-      <span>© 2026 Mercuria. Todos los derechos reservados.</span>
-      <span class="theme" role="group" aria-label="Tema">Tema · <button type="button" data-t="light">claro</button> / <button type="button" data-t="dark">oscuro</button></span>
+      <p>Mercuria es un holding de inversión. No realiza oferta pública de valores ni capta ahorro del público. Cada compañía del portafolio opera con su propia razón social y bajo su propia responsabilidad. La información de este sitio es institucional y no constituye asesoramiento financiero ni una invitación a invertir. Mercuria Pay procesa y liquida cobranzas de alquiler; no otorga garantías.</p>
+      <p>© 2026 Mercuria. Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>
 
 <script>
   (function () {
-    // tema: claro / oscuro (persistido por visitante)
-    var root = document.documentElement, btns = document.querySelectorAll('.theme button');
-    function paint() { var t = root.getAttribute('data-theme'); btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.t === t)); }); }
-    try { var s = localStorage.getItem('mercuria-theme'); if (s) root.setAttribute('data-theme', s); } catch (e) {}
-    btns.forEach(function (b) { b.addEventListener('click', function () { root.setAttribute('data-theme', b.dataset.t); try { localStorage.setItem('mercuria-theme', b.dataset.t); } catch (e) {} paint(); }); });
-    paint();
+    // Onda de puntos del hero
+    var c = document.getElementById('onda'), ctx = c.getContext('2d'), t = 0, raf;
+    var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function medir() { var r = window.devicePixelRatio || 1; c.width = c.clientWidth * r; c.height = c.clientHeight * r; ctx.setTransform(r, 0, 0, r, 0, 0); }
+    function dibujar() {
+      var w = c.clientWidth, h = c.clientHeight;
+      ctx.clearRect(0, 0, w, h);
+      var cols = Math.max(40, Math.floor(w / 16)), filas = 22;
+      for (var j = 0; j < filas; j++) {
+        var prof = j / (filas - 1);
+        for (var i = 0; i <= cols; i++) {
+          var x = (i / cols) * w;
+          var base = h * 0.42 + prof * h * 0.62;
+          var onda = Math.sin(i * 0.11 + t + j * 0.35) * 26 * (0.4 + prof) + Math.cos(i * 0.045 - t * 0.7 + j * 0.2) * 18;
+          var y = base + onda - prof * 40;
+          if (y < 0 || y > h) continue;
+          var a = 0.12 + prof * 0.55;
+          ctx.fillStyle = 'rgba(255,255,255,' + a.toFixed(3) + ')';
+          ctx.beginPath(); ctx.arc(x, y, 0.9 + prof * 1.1, 0, 6.283); ctx.fill();
+        }
+      }
+      if (!quieto) { t += 0.008; raf = requestAnimationFrame(dibujar); }
+    }
+    medir(); dibujar();
+    window.addEventListener('resize', function () { medir(); if (quieto) dibujar(); });
 
-    // "Solo capital" excluye a las demás necesidades
-    var necs = document.querySelectorAll('input[name="nec"]');
-    necs.forEach(function (c) {
-      c.addEventListener('change', function () {
-        if (!c.checked) return;
-        necs.forEach(function (o) { if (o !== c && ((c.value === 'capital') || (o.value === 'capital'))) o.checked = false; });
-      });
-    });
-
-    // formulario: validación mínima y estado de éxito
-    var form = document.getElementById('form');
-    form.addEventListener('submit', function (e) {
+    // Formulario
+    var f = document.getElementById('formulario');
+    f.addEventListener('submit', function (e) {
       e.preventDefault();
-      var bad = false;
-      form.querySelectorAll('.f').forEach(function (f) {
-        var el = f.querySelector('[required]'); if (!el) return;
+      var mal = false;
+      f.querySelectorAll('.campo').forEach(function (campo) {
+        var el = campo.querySelector('[required]'); if (!el) return;
         var ok = el.value.trim() !== '' && (el.type !== 'email' || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value));
-        f.setAttribute('data-invalid', ok ? 'false' : 'true');
-        el.setAttribute('aria-invalid', ok ? 'false' : 'true');
-        if (!ok && !bad) { bad = true; el.focus(); }
+        campo.setAttribute('data-mal', ok ? 'false' : 'true'); el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+        if (!ok && !mal) { mal = true; el.focus(); }
       });
-      if (bad) return;
-      form.hidden = true;
-      var ok = document.getElementById('ok'); ok.classList.add('on'); ok.scrollIntoView({ block: 'center' });
+      if (mal) return;
+      f.hidden = true;
+      var g = document.getElementById('gracias'); g.classList.add('ver'); g.scrollIntoView({ block: 'center' });
     });
   })();
 </script>
-
 </body>
 </html>

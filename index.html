@@ -12,7 +12,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%232fdf84'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
 <style>
   :root {
     --negro: #000000;
@@ -47,24 +47,48 @@
   .btn.lleno:hover { background: var(--verde-oscuro); border-color: var(--verde-oscuro); color: var(--blanco); }
 
   /* barra */
-  .barra { position: absolute; top: 0; left: 0; right: 0; z-index: 10; }
-  .barra .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 24px; }
-  .marca { display: inline-flex; align-items: baseline; gap: 6px; color: var(--blanco); font-weight: 500; font-size: 26px; letter-spacing: -0.01em; }
-  .marca .cap { font-weight: 300; margin-left: 6px; }
-  .marca i { width: 9px; height: 9px; border-radius: 50%; background: var(--verde); display: inline-block; transform: translateY(-1px); }
-  .menu { display: none; gap: 34px; font-size: 14px; font-weight: 400; color: rgba(255,255,255,.85); }
-  .menu a:hover { color: var(--verde); }
-  @media (min-width: 980px) { .menu { display: flex; } }
-  .barra .btn { padding: 10px 22px; font-size: 12px; }
-  @media (max-width: 599px) { .barra .btn { display: none; } }
+  .barra { position: fixed; top: 0; left: 0; right: 0; z-index: 40; transition: background .35s, backdrop-filter .35s, box-shadow .35s; }
+  .barra .wrap { display: flex; align-items: center; justify-content: space-between; height: 92px; gap: 24px; transition: height .35s; }
+  .barra.solida { background: rgba(0,0,0,.82); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(255,255,255,.08); }
+  .barra.solida .wrap { height: 68px; }
+  .marca { display: inline-flex; align-items: baseline; gap: 6px; color: var(--blanco); font-weight: 500; font-size: 24px; letter-spacing: -0.01em; }
+  .marca .cap { font-weight: 300; margin-left: 6px; opacity: .85; }
+  .marca i { width: 8px; height: 8px; border-radius: 50%; background: var(--verde); display: inline-block; transform: translateY(-2px); }
+  .menu { display: none; gap: 36px; font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.78); }
+  .menu a { position: relative; padding: 6px 0; transition: color .2s; }
+  .menu a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--verde); transition: right .25s; }
+  .menu a:hover { color: var(--blanco); }
+  .menu a:hover::after { right: 0; }
+  @media (min-width: 1080px) { .menu { display: flex; } }
+  .barra .btn { padding: 11px 24px; font-size: 11px; letter-spacing: .14em; }
+  @media (max-width: 1079px) { .barra .btn { display: none; } }
+  .hamb { display: inline-flex; flex-direction: column; justify-content: center; gap: 6px; width: 44px; height: 44px; padding: 0 8px; background: transparent; border: 0; cursor: pointer; }
+  .hamb span { display: block; height: 1.5px; background: var(--blanco); transition: transform .3s, opacity .3s, width .3s; }
+  .hamb span:nth-child(2) { width: 70%; }
+  @media (min-width: 1080px) { .hamb { display: none; } }
+  body.menu-abierto .hamb span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  body.menu-abierto .hamb span:nth-child(2) { opacity: 0; }
+  body.menu-abierto .hamb span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+  .menu-movil { position: fixed; inset: 0; z-index: 30; background: var(--negro); color: var(--blanco); display: flex; flex-direction: column; justify-content: center; padding: 100px 28px 40px; gap: 6px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .3s, transform .3s, visibility .3s; }
+  body.menu-abierto .menu-movil { opacity: 1; visibility: visible; transform: none; }
+  body.menu-abierto { overflow: hidden; }
+  .menu-movil a { font-size: clamp(26px, 6vw, 40px); font-weight: 300; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.12); color: var(--blanco); }
+  .menu-movil a:last-of-type { border: 0; }
+  .menu-movil .btn { align-self: flex-start; margin-top: 28px; font-size: 12px; }
 
-  /* hero */
-  .hero { position: relative; background: var(--negro); color: var(--blanco); min-height: 88vh; display: flex; align-items: center; overflow: hidden; }
-  .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-  .hero .wrap { position: relative; padding-top: 120px; padding-bottom: 96px; }
-  .hero h1 { color: var(--blanco); font-weight: 500; font-size: clamp(36px, 5.4vw, 72px); line-height: 1.06; max-width: 16ch; letter-spacing: -0.01em; }
-  .hero p { margin-top: 26px; font-size: clamp(17px, 1.6vw, 21px); font-weight: 300; color: rgba(255,255,255,.82); max-width: 52ch; line-height: 1.5; }
+  /* hero con video */
+  .hero { position: relative; background: var(--negro); color: var(--blanco); min-height: 100vh; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; }
+  .hero video, .hero .poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .hero .poster { background: url(assets/hero.jpg) center 40% / cover no-repeat; }
+  .hero .velo { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.28) 40%, rgba(0,0,0,.55) 70%, #000 100%); }
+  .hero .wrap { position: relative; padding-top: 160px; padding-bottom: 88px; }
+  .hero .ceja { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.75); font-weight: 500; margin-bottom: 26px; }
+  .hero .ceja::before { content: ""; width: 34px; height: 1px; background: var(--verde); }
+  .hero h1 { color: var(--blanco); font-weight: 500; font-size: clamp(38px, 5.6vw, 76px); line-height: 1.04; max-width: 15ch; letter-spacing: -0.015em; }
+  .hero p { margin-top: 26px; font-size: clamp(17px, 1.5vw, 20px); font-weight: 300; color: rgba(255,255,255,.8); max-width: 52ch; line-height: 1.55; }
   .hero .btn { margin-top: 38px; }
+  .hero .credito { position: absolute; right: 24px; bottom: 18px; font-size: 11px; color: rgba(255,255,255,.35); letter-spacing: .04em; }
+  @media (max-width: 599px) { .hero .credito { display: none; } }
   .cinta { position: relative; background: var(--negro); border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.7); overflow: hidden; font-size: 14px; font-weight: 400; }
   .cinta .pista { display: flex; gap: 0; width: max-content; animation: correr 46s linear infinite; }
   .cinta span { padding: 16px 28px; white-space: nowrap; border-right: 1px solid rgba(255,255,255,.12); }
@@ -150,6 +174,28 @@
   .cadena-titulo { margin-top: 48px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--verde); font-weight: 500; }
   .cadena { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
   .cadena li { border: 1px solid rgba(255,255,255,.28); color: var(--blanco); font-size: 14px; padding: 9px 16px; font-weight: 400; }
+  /* fundador */
+  .fundador { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: start; }
+  @media (min-width: 900px) { .fundador { grid-template-columns: .85fr 1.15fr; gap: 88px; } }
+  .retrato { position: relative; aspect-ratio: 4 / 5; background: var(--gris-oscuro); overflow: hidden; border-top: 6px solid var(--verde); }
+  .retrato img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .retrato .iniciales { position: absolute; inset: 0; display: grid; place-items: center; color: rgba(255,255,255,.18); font-size: clamp(90px, 14vw, 180px); font-weight: 500; letter-spacing: -0.04em; }
+  .fundador .rol { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--verde-oscuro); font-weight: 500; margin-bottom: 18px; }
+  .fundador h2 { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05; }
+  .fundador .cargo { margin-top: 10px; font-size: 17px; color: var(--titulo); font-weight: 400; }
+  .fundador .parrafos { margin-top: 30px; max-width: 58ch; }
+  .fundador .parrafos p { font-size: 17px; line-height: 1.7; }
+  .trayectoria { margin-top: 36px; border-top: 1px solid var(--linea); }
+  .trayectoria li { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--linea); font-size: 15px; }
+  .trayectoria li b { font-weight: 500; color: var(--titulo); }
+  .trayectoria li span { color: var(--texto); white-space: nowrap; }
+  .firma { margin-top: 36px; font-family: "Mrs Saint Delafield", "Brush Script MT", cursive; font-size: 56px; line-height: 1; color: var(--titulo); transform: rotate(-3deg); transform-origin: left; display: inline-block; }
+  .firma-nota { display: block; margin-top: 4px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--texto); }
+
+  /* aparición al hacer scroll */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visto { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
   .cita { margin-top: 64px; font-size: clamp(20px, 2.2vw, 28px); color: var(--blanco); font-weight: 300; max-width: 30ch; line-height: 1.35; border-left: 4px solid var(--verde); padding-left: 22px; }
 
   /* contacto */
@@ -194,29 +240,45 @@
 </head>
 <body>
 
-<header class="barra">
+<header class="barra" id="barra">
   <div class="wrap">
     <a class="marca" href="#inicio" aria-label="Mercuria Capital">mercuria<span class="cap">capital</span><i aria-hidden="true"></i></a>
     <nav class="menu" aria-label="Secciones">
-      <a href="#que-es">Qué es Mercuria Capital</a>
+      <a href="#que-es">El grupo</a>
       <a href="#que-hacemos">Qué hacemos</a>
       <a href="#portafolio">Portafolio</a>
-      <a href="#buscamos">Criterios de inversión</a>
-      <a href="#proceso">Proceso</a>
+      <a href="#buscamos">Criterios</a>
+      <a href="#fundador">Fundador</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <a class="btn" href="#contacto">Presentar una compañía</a>
+    <button class="hamb" id="hamb" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil"><span></span><span></span><span></span></button>
   </div>
 </header>
+<nav class="menu-movil" id="menu-movil" aria-label="Menú">
+  <a href="#que-es">El grupo</a>
+  <a href="#que-hacemos">Qué hacemos</a>
+  <a href="#portafolio">Portafolio</a>
+  <a href="#buscamos">Criterios de inversión</a>
+  <a href="#fundador">Fundador</a>
+  <a href="#contacto">Contacto</a>
+  <a class="btn" href="#contacto">Presentar una compañía</a>
+</nav>
 
 <main id="inicio">
   <div class="hero">
-    <canvas id="onda" aria-hidden="true"></canvas>
+    <div class="poster" aria-hidden="true"></div>
+    <video id="video-hero" autoplay muted loop playsinline preload="metadata" poster="assets/hero.jpg" aria-hidden="true" tabindex="-1">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="velo" aria-hidden="true"></div>
     <div class="wrap">
+      <span class="ceja">Buenos Aires · Grupo de inversión privado</span>
       <h1>Grupo de inversión privado del sector inmobiliario argentino.</h1>
       <p>Mercuria Capital posee y gestiona participaciones en compañías de cobranzas, alquileres, medios y servicios para el sector. Invierte con horizonte largo y conoce de primera mano el mercado en el que operan.</p>
       <a class="btn" href="#contacto">Presentar una compañía</a>
     </div>
+    <span class="credito">Buenos Aires desde el aire · video Alex Dos Santos / Pexels</span>
   </div>
   <div class="cinta" aria-hidden="true">
     <div class="pista">
@@ -367,6 +429,29 @@
     </div>
   </section>
 
+  <section id="fundador" class="suave">
+    <div class="wrap fundador">
+      <figure class="retrato" aria-label="Retrato de Iván Ginevra">
+        <span class="iniciales" aria-hidden="true">IG</span>
+      </figure>
+      <div>
+        <span class="rol">Fundador</span>
+        <h2>Iván Ginevra</h2>
+        <p class="cargo">Fundador y presidente de Mercuria Capital</p>
+        <div class="parrafos">
+          <p>Iván Ginevra tiene más de treinta años de trayectoria en el mercado inmobiliario argentino. Presidió la Cámara Inmobiliaria Argentina, la entidad que agrupa a las inmobiliarias del país.</p>
+          <p>En 2026 fundó Mercuria, la compañía de garantías y cobranzas de alquiler que dio origen al grupo. Desde entonces preside Mercuria Capital y conduce su política de inversión.</p>
+        </div>
+        <ul class="trayectoria">
+          <li><b>Presidente</b><span>Mercuria Capital</span></li>
+          <li><b>Fundador</b><span>Mercuria · 2026</span></li>
+          <li><b>Ex presidente</b><span>Cámara Inmobiliaria Argentina</span></li>
+        </ul>
+        <span class="firma" aria-hidden="true">Iván Ginevra</span>
+      </div>
+    </div>
+  </section>
+
   <section id="contacto" class="contacto">
     <div class="wrap">
       <h2 class="titulo centro">Contactanos</h2>
@@ -400,7 +485,7 @@
       <p style="margin-top:14px;max-width:34ch">Grupo de inversión privado con participaciones en compañías del sector inmobiliario argentino.</p>
       <p style="margin-top:14px">Buenos Aires, Argentina</p>
     </div>
-    <div><h4>Grupo</h4><ul><li><a href="#que-es">Qué es Mercuria Capital</a></li><li><a href="#que-hacemos">Qué hacemos</a></li><li><a href="#buscamos">Criterios de inversión</a></li><li><a href="#proceso">Proceso</a></li></ul></div>
+    <div><h4>Grupo</h4><ul><li><a href="#que-es">Qué es Mercuria Capital</a></li><li><a href="#que-hacemos">Qué hacemos</a></li><li><a href="#buscamos">Criterios de inversión</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#fundador">Fundador</a></li></ul></div>
     <div><h4>Portafolio</h4><ul><li><a href="https://mercuria.ar" target="_blank" rel="noopener">Mercuria Pay</a></li><li><a href="https://www.mob.ar" target="_blank" rel="noopener">MOB</a></li><li><a href="https://ladrillo.info" target="_blank" rel="noopener">Ladrillo.info</a></li><li><a href="https://ladrillo.info/academia" target="_blank" rel="noopener">Academia Ladrillo</a></li></ul></div>
     <div><h4>Contacto</h4><ul><li><a href="#contacto">Presentar una compañía</a></li><li><a href="#contacto">Consultas institucionales</a></li><li><a href="#contacto">Prensa</a></li></ul></div>
     <div class="legal">
@@ -412,31 +497,38 @@
 
 <script>
   (function () {
-    // Onda de puntos del hero
-    var c = document.getElementById('onda'), ctx = c.getContext('2d'), t = 0, raf;
+    // Barra: sólida al hacer scroll
+    var barra = document.getElementById('barra');
+    function alScroll() { barra.classList.toggle('solida', window.scrollY > 40); }
+    alScroll(); window.addEventListener('scroll', alScroll, { passive: true });
+
+    // Menú móvil
+    var hamb = document.getElementById('hamb'), menuMovil = document.getElementById('menu-movil');
+    function cerrarMenu() { document.body.classList.remove('menu-abierto'); hamb.setAttribute('aria-expanded', 'false'); hamb.setAttribute('aria-label', 'Abrir menú'); }
+    hamb.addEventListener('click', function () {
+      var abierto = document.body.classList.toggle('menu-abierto');
+      hamb.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      hamb.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+    });
+    menuMovil.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', cerrarMenu); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrarMenu(); });
+
+    // Video: respetar reduced motion y conexiones lentas
+    var video = document.getElementById('video-hero');
     var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function medir() { var r = window.devicePixelRatio || 1; c.width = c.clientWidth * r; c.height = c.clientHeight * r; ctx.setTransform(r, 0, 0, r, 0, 0); }
-    function dibujar() {
-      var w = c.clientWidth, h = c.clientHeight;
-      ctx.clearRect(0, 0, w, h);
-      var cols = Math.max(40, Math.floor(w / 16)), filas = 22;
-      for (var j = 0; j < filas; j++) {
-        var prof = j / (filas - 1);
-        for (var i = 0; i <= cols; i++) {
-          var x = (i / cols) * w;
-          var base = h * 0.42 + prof * h * 0.62;
-          var onda = Math.sin(i * 0.11 + t + j * 0.35) * 26 * (0.4 + prof) + Math.cos(i * 0.045 - t * 0.7 + j * 0.2) * 18;
-          var y = base + onda - prof * 40;
-          if (y < 0 || y > h) continue;
-          var a = 0.12 + prof * 0.55;
-          ctx.fillStyle = 'rgba(255,255,255,' + a.toFixed(3) + ')';
-          ctx.beginPath(); ctx.arc(x, y, 0.9 + prof * 1.1, 0, 6.283); ctx.fill();
-        }
-      }
-      if (!quieto) { t += 0.008; raf = requestAnimationFrame(dibujar); }
-    }
-    medir(); dibujar();
-    window.addEventListener('resize', function () { medir(); if (quieto) dibujar(); });
+    var lenta = navigator.connection && (navigator.connection.saveData || /2g/.test(navigator.connection.effectiveType || ''));
+    if (quieto || lenta) { video.removeAttribute('autoplay'); video.pause(); video.remove(); }
+    else { video.play().catch(function () {}); }
+
+    // Aparición al hacer scroll
+    var bloques = document.querySelectorAll('main section .wrap > *, .tarjeta, .paso');
+    bloques.forEach(function (el) { el.classList.add('reveal'); });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('visto'); io.unobserve(en.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      bloques.forEach(function (el) { io.observe(el); });
+    } else { bloques.forEach(function (el) { el.classList.add('visto'); }); }
 
     // Formulario
     var f = document.getElementById('formulario');
